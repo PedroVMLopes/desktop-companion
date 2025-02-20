@@ -1,0 +1,15 @@
+{
+    "appId": "com.pedrovmlopes.desktopCompanion",
+    "files": ["dist-electron", "dist-react"],
+    "icon": "./computer-icon.png",
+    "mac": {
+        "target": "dmg"
+    },
+    "linux": {
+        "target": "AppImage",
+        "category": "Utility"
+    },
+    "win": {
+        "target": ["portable", "msi"]
+    }
+}

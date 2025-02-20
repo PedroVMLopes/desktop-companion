@@ -9,8 +9,8 @@ export default {
     themes: [
       {
         customTheme: {
-          primary: "#6D2323",
-          secondary: "#2C3930",
+          primary: "#2C3930",
+          secondary: "#6D2323",
           accent: "#3B6790",
           neutral: "#E5D0AC",
           "base-100": "#FEF9E1",
