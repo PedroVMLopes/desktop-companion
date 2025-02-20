@@ -2,7 +2,7 @@ import { useCurrentTime, useCurrentDate } from "../../utils/util"
 
 export function MainPage() {
     return (
-        <div>
+        <div className="flex flex-col h-full justify-end pb-6">
             <DateDisplay />
             <div className="flex flex-col">
                 <DayProgressBar />
@@ -58,10 +58,10 @@ const DayProgressBar: React.FC = () => {
 
 const HourProgressBar: React.FC = () => {
     const { minutes } = useCurrentTime();
-    return <progress className="progress progress-accent w-[350px] mt-2 self-center h-3 rounded-md rounded-b-none" value={minutes} max="60"></progress>
+    return <progress className="progress progress-accent w-[350px] mt-2 self-center shadow-md" value={minutes} max="60"></progress>
 }
 
 const MinuteProgressBar: React.FC = () => {
     const { seconds } = useCurrentTime();
-    return <progress className="progress progress-primary w-[350px] self-center h-1 rounded-md rounded-t-none" value={seconds} max="60"></progress>
+    return <progress className="progress progress-neutral-content w-[350px] mt-1 self-center h-1" value={seconds} max="60"></progress>
 }
