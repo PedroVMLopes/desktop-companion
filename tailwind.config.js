@@ -9,10 +9,10 @@ export default {
     themes: [
       {
         customTheme: {
-          primary: "#2C3930",
+          primary: "#3F4F44",
           secondary: "#6D2323",
-          accent: "#3B6790",
-          neutral: "#E5D0AC",
+          accent: "#C14600",
+          neutral: "#DCD7C9",
           "base-100": "#FEF9E1",
         },
       },
