@@ -2,7 +2,15 @@
 export default {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        quicksand: ["Quicksand", "sans-serif"],
+        vt323: ["VT323", "sans-serif"],
+        cormorant: ["Cormorant", "sans-serif"],
+        lobsterTitle: ["Lobster", "sans-serif"],
+        lobsterText: ["Lobster Two", "sans-serif"],
+      },
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {
@@ -16,7 +24,7 @@ export default {
           "base-100": "#FEF9E1",
         },
       },
-      "dark",
+      "business",
     ],
   },
 };
