@@ -7,9 +7,11 @@ export function MainPage() {
             <div className="flex flex-col">
                 <DayProgressBar />
                 <Clock />
-                <div className="flex flex-col">
-                    <HourProgressBar />
-                    <MinuteProgressBar />
+                <div className="flex flex-col w-full items-center">
+                    <div className="flex flex-col w-min shadow-lg">
+                        <HourProgressBar />
+                        <MinuteProgressBar />
+                    </div>
                 </div>
                 
             </div>
@@ -61,5 +63,5 @@ const HourProgressBar: React.FC = () => {
 
 const MinuteProgressBar: React.FC = () => {
     const { seconds } = useCurrentTime();
-    return <progress className="progress progress-accent-content w-[350px] self-center h-2 rounded-md rounded-t-none" value={seconds} max="60"></progress>
+    return <progress className="progress progress-primary w-[350px] self-center h-1 rounded-md rounded-t-none" value={seconds} max="60"></progress>
 }
