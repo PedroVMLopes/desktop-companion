@@ -2,6 +2,9 @@
 import { GiTomato } from "react-icons/gi";
 import { FaBusinessTime } from "react-icons/fa";
 import { LuNotebookPen } from "react-icons/lu";
+import { IoHome } from "react-icons/io5";
+import { BsClipboardDataFill } from "react-icons/bs";
+import { RiBookShelfFill } from "react-icons/ri";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -16,7 +19,7 @@ export const Navbar = () => {
         <nav className="navbar fixed flex flex-col items-start mt-2">
             <ul className="navbar-nav">
                 <button
-                    className="btn btn-neutral text-accent text-lg font-Paprika min-h-0 h-min px-2 py-1 rounded-full shadow-md shadow-stone-800"
+                    className="btn btn-primary text-accent text-lg font-Paprika min-h-0 h-min px-2 py-1 rounded-full shadow-md shadow-stone-800"
                     onClick={() => setOpen(!open)}
                 >
                     {/*<IoMenu />*/}
@@ -45,7 +48,7 @@ function NavMenu() {
             {menuItems.map(({ Icon, action }, index) => (
                 <motion.button
                     key={index}
-                    className="btn btn-neutral text-primary min-h-0 h-min min-w-0 p-2 text-xl mt-2 rounded-xl shadow-md shadow-stone-800"
+                    className="btn btn-neutral min-h-0 h-min min-w-0 p-2 text-xl mt-2 rounded-xl shadow-md shadow-stone-800"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
@@ -60,7 +63,7 @@ function NavMenu() {
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
-                    transition={{ duration: 0.2, ease: "easeOut", delay: 3 * 0.1 }}
+                    transition={{ duration: 0.2, ease: "easeOut", delay: 6 * 0.1 }}
                 >
                     <ThemeToggle />
                 </motion.button>
@@ -73,8 +76,11 @@ const handlePomodoroClick = () => {
 };
 
 const menuItems = [
+    { Icon: IoHome},
     { Icon: FaBusinessTime },
     { Icon: GiTomato, action: handlePomodoroClick },
+    { Icon: BsClipboardDataFill},
     { Icon: LuNotebookPen },
+    { Icon: RiBookShelfFill}
 ];
 

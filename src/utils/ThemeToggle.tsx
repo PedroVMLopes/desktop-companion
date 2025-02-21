@@ -13,8 +13,8 @@ export const ThemeToggle = () => {
     <label className="swap swap-rotate">
       <input
         type="checkbox"
-        onChange={() => setTheme(theme === "customTheme" ? "coffee" : "customTheme")}
-        checked={theme === "coffee"}
+        onChange={() => setTheme(theme === "customTheme" ? "customDark" : "customTheme")}
+        checked={theme === "customDark"}
       />
       <BsSunFill className="swap-on w-5 h-5 text-yellow-500" />
       <BsMoonFill className="swap-off w-5 h-5 text-blue-300" />
