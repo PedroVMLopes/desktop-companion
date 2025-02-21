@@ -2,3 +2,21 @@
   width: 100vh;
   height: 100vh;
 }
+
+.spacer {
+  position: fixed;
+  aspect-ratio: 675/900;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.backgroundLight {
+  background-image: url('../ui/assets/backgroundLight.svg');
+}
+
+.backgroundDark {
+  background-image: url('../ui/assets/backgroundDark.svg');
+}

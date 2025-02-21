@@ -10,7 +10,7 @@ export function MainPage() {
     const { hours, minutes, seconds } = useCurrentTime();
 
     return (
-        <div className="flex flex-col h-full justify-end pb-6">
+        <div className="flex flex-col h-full justify-end items-center pb-6 w-full">
             <DateDisplay />
             <div className="flex flex-col">
                 <div className="flex flex-col w-min self-center">

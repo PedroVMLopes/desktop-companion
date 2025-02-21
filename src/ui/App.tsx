@@ -6,8 +6,10 @@ function App() {
 
   return (
     <div data-theme="" className='w-full h-full'>
-      <Navbar />
-      <MainPage />
+      <div className='spacer backgroundLight'>
+        <Navbar />
+        <MainPage />
+      </div>
     </div>
   )
 }
