@@ -16,10 +16,10 @@ export const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="navbar fixed flex flex-row items-center w-full max-w-96">
+        <nav className="flex flex-row items-center w-full max-w-[420px] p-1 px-1">
             <ul className="navbar-nav">
                 <button
-                    className="btn btn-primary text-accent text-lg font-Paprika min-h-0 h-min px-2 py-1 rounded-full shadow-md shadow-stone-800"
+                    className="btn btn-primary text-accent text-lg font-Paprika min-h-0 h-min px-2 py-1 rounded-full shadow-sm shadow-stone-800"
                     onClick={() => setOpen(!open)}
                 >
                     {/*<IoMenu />*/}
@@ -48,7 +48,7 @@ function NavMenu() {
             {menuItems.map(({ Icon, action }, index) => (
                 <motion.button
                     key={index}
-                    className="btn btn-secondary min-h-0 h-min min-w-0 p-2 text-xl rounded-xl shadow-md shadow-stone-800"
+                    className="btn btn-secondary min-h-0 h-min min-w-0 p-2 text-xl rounded-xl shadow-sm shadow-stone-800"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
@@ -59,7 +59,7 @@ function NavMenu() {
                 </motion.button>
             ))}
             <motion.button
-                    className="btn btn-secondary min-h-0 h-min min-w-0 p-2 text-xl rounded-xl shadow-md shadow-stone-800"
+                    className="btn btn-secondary min-h-0 h-min min-w-0 p-2 text-xl rounded-xl shadow-sm shadow-stone-800"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}

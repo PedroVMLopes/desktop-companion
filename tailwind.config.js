@@ -21,8 +21,7 @@ export default {
       {
         customTheme: {
           primary: "#3E3232",
-          secondary: "#9A7E6F",
-          "secondary-content": "#322C2B",
+          secondary: "#948979",
           accent: "#C14600",
           neutral: "#F4EAE0",
           "base-100": "#FEF9E1",
@@ -30,11 +29,10 @@ export default {
         },
         customDark: {
           primary: "#F4EAE0",
-          secondary: "#FFB26F",
-          "secondary-content": "#322C2B",
+          secondary: "#AB886D",
           accent: "#C14600",
-          neutral: "#3E3232",
-          "base-100": "#3F4F44",
+          neutral: "#2C3930",
+          "base-100": "#3e3232",
           error: "8c0327",
         },
       },

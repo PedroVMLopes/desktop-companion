@@ -1,5 +1,6 @@
+import { Widgets } from '../components/Widgets';
 import './App.css'
-import { MainPage } from '../pages/MainPage'
+import { BottomContent } from './BottomContent'
 import { Navbar } from './Navbar'
 import { useEffect, useState } from 'react'
 
@@ -33,10 +34,13 @@ function App() {
   }, []);
 
   return (
-    <div className='w-full h-full'>
+    <div className='w-screen h-screen'>
       <div className={theme === "customTheme" ? "spacer backgroundLight" : "spacer backgroundDark"}>
-        <Navbar />
-        <MainPage />
+        <div className='MainContentBackground flex flex-col absolute bg-base-100 w-[98%] m-1 rounded-xl'>
+          <div className='NavbarRender bg-base-300 m-1 w-[98%] rounded-xl'><Navbar /></div>
+          <div className='WidgetsRender bg-base-200 mx-1 w-[98%] rounded-xl'><Widgets /></div>
+        </div>
+        <BottomContent />
       </div>
     </div>
   )

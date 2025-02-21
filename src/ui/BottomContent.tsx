@@ -1,4 +1,4 @@
-// src/pages/MainPage.tsx
+// src/pages/BottomContent.tsx
 import { useCurrentTime } from "../utils/util";
 import DateDisplay from "../components/DateDisplay";
 import Clock from "../components/Clock";
@@ -6,7 +6,7 @@ import DayProgressBar from "../components/DayProgressBar";
 import HourProgressBar from "../components/HourProgressBar";
 import MinuteProgressBar from "../components/MinuteProgressBar";
 
-export function MainPage() {
+export function BottomContent() {
     const { hours, minutes, seconds } = useCurrentTime();
 
     return (
@@ -26,4 +26,4 @@ export function MainPage() {
     );
 }
 
-export default MainPage;
+export default BottomContent;
