@@ -16,7 +16,7 @@ export const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="navbar fixed flex flex-col items-start mt-2">
+        <nav className="navbar fixed flex flex-row items-center w-full max-w-96">
             <ul className="navbar-nav">
                 <button
                     className="btn btn-primary text-accent text-lg font-Paprika min-h-0 h-min px-2 py-1 rounded-full shadow-md shadow-stone-800"
@@ -27,7 +27,7 @@ export const Navbar = () => {
                 </button>
             </ul>
 
-            {/* Menu animation */}
+            {/* Menu animation & NavMenu */}
             <AnimatePresence>
                 {open && <NavMenu />}
             </AnimatePresence>
@@ -39,7 +39,7 @@ export const Navbar = () => {
 function NavMenu() {
     return (
         <motion.ul
-            className="flex flex-col"
+            className="flex flex-row w-full justify-evenly"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.6 }}
@@ -48,7 +48,7 @@ function NavMenu() {
             {menuItems.map(({ Icon, action }, index) => (
                 <motion.button
                     key={index}
-                    className="btn btn-neutral min-h-0 h-min min-w-0 p-2 text-xl mt-2 rounded-xl shadow-md shadow-stone-800"
+                    className="btn btn-secondary min-h-0 h-min min-w-0 p-2 text-xl rounded-xl shadow-md shadow-stone-800"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
@@ -59,7 +59,7 @@ function NavMenu() {
                 </motion.button>
             ))}
             <motion.button
-                    className="btn btn-neutral min-h-0 h-min min-w-0 p-2 text-xl mt-2 rounded-xl shadow-md shadow-stone-800"
+                    className="btn btn-secondary min-h-0 h-min min-w-0 p-2 text-xl rounded-xl shadow-md shadow-stone-800"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
