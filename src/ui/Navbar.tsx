@@ -19,7 +19,7 @@ export const Navbar = () => {
         <nav className="flex flex-row items-center w-full max-w-[420px] p-1 px-1">
             <ul className="navbar-nav">
                 <button
-                    className="btn btn-primary text-accent text-lg font-Paprika min-h-0 h-min px-2 py-1 rounded-full shadow-sm shadow-stone-800"
+                    className="btn btn-primary text-accent text-lg font-Paprika min-h-0 h-min px-[6px] py-[2px] rounded-xl shadow-sm shadow-stone-800 items-center"
                     onClick={() => setOpen(!open)}
                 >
                     {/*<IoMenu />*/}
@@ -39,7 +39,7 @@ export const Navbar = () => {
 function NavMenu() {
     return (
         <motion.ul
-            className="flex flex-row w-full justify-evenly"
+            className="flex flex-row w-full justify-evenly items-center"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.6 }}
@@ -48,7 +48,7 @@ function NavMenu() {
             {menuItems.map(({ Icon, action }, index) => (
                 <motion.button
                     key={index}
-                    className="btn btn-secondary min-h-0 h-min min-w-0 p-2 text-xl rounded-xl shadow-sm shadow-stone-800"
+                    className="btn btn-secondary min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
@@ -59,7 +59,7 @@ function NavMenu() {
                 </motion.button>
             ))}
             <motion.button
-                    className="btn btn-secondary min-h-0 h-min min-w-0 p-2 text-xl rounded-xl shadow-sm shadow-stone-800"
+                    className="btn btn-secondary min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
