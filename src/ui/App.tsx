@@ -5,7 +5,7 @@ import { Navbar } from './Navbar'
 function App() {
 
   return (
-    <div data-theme="customTheme" className='w-full h-full'>
+    <div data-theme="" className='w-full h-full'>
       <Navbar />
       <MainPage />
     </div>

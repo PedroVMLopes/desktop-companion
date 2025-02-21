@@ -17,14 +17,17 @@ export default {
     themes: [
       {
         customTheme: {
-          primary: "#4A4947",
-          secondary: "#3F4F44",
+          primary: "#3E3232",
+          secondary: "#9A7E6F",
+          "secondary-content": "#322C2B",
           accent: "#C14600",
           neutral: "#DCD7C9",
           "base-100": "#FEF9E1",
+          error: "8c0327",
         },
       },
       "business",
+      "autumn",
     ],
   },
 };
