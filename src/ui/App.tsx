@@ -36,9 +36,11 @@ function App() {
   return (
     <div className='w-screen h-screen'>
       <div className={theme === "customTheme" ? "spacer backgroundLight" : "spacer backgroundDark"}>
-        <div className='MainContentBackground flex flex-col absolute bg-base-100 w-[98%] m-1 rounded-xl'>
-          <div className='NavbarRender bg-base-300 m-1 w-[98%] rounded-xl'><Navbar /></div>
-          <div className='WidgetsRender bg-base-200 mx-1 w-[98%] rounded-xl'><Widgets /></div>
+        <div className='absolute w-full mt-1'>
+          <div className='NavbarRender bg-black bg-opacity-20 m-1 w-[98%] rounded-xl'><Navbar /></div>
+          <div className='MainContentBackground flex flex-col bg-base-300 w-[98%] m-1 rounded-xl'>
+            <div className='WidgetsRender bg-base-200 m-1 w-[98%] rounded-xl'><Widgets /></div>
+          </div>
         </div>
         <BottomContent />
       </div>

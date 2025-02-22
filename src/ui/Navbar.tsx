@@ -48,7 +48,7 @@ function NavMenu() {
             {menuItems.map(({ Icon, action }, index) => (
                 <motion.button
                     key={index}
-                    className="btn btn-secondary min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800"
+                    className="btn btn-neutral min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
@@ -59,7 +59,7 @@ function NavMenu() {
                 </motion.button>
             ))}
             <motion.button
-                    className="btn btn-secondary min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800"
+                    className="btn btn-neutral  min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
