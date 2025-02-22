@@ -1,3 +1,4 @@
+
 interface DayProgressBarProps {
     hours: number;
 }
