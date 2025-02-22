@@ -1,8 +1,10 @@
-import { SalaryInDollar } from '../components/Widgets';
 import './App.css'
+import { useEffect, useState } from 'react'
+import { HashRouter as Router } from 'react-router-dom';
+
 import { BottomContent } from './BottomContent'
 import { Navbar } from './Navbar'
-import { useEffect, useState } from 'react'
+import AnimatedRoutes from './AnimatedRoutes';
 
 function App() {
   const [theme, setTheme] = useState<string>(() => {
@@ -37,15 +39,17 @@ function App() {
     <div className='w-screen h-screen'>
       <div className={theme === "customTheme" ? "spacer backgroundLight" : "spacer backgroundDark"}>
         <div className='absolute w-full mt-1'>
-          <Navbar />
-          <div className='MainContent flex flex-col w-[98%] m-1 mt-2 rounded-xl'>
-            <SalaryInDollar />
-          </div>
+          <Router>
+            <Navbar />
+            <main className='MainContent flex flex-col w-[98%] m-1 mt-2 rounded-xl'>
+              <AnimatedRoutes />
+            </main>
+          </Router>
         </div>
         <BottomContent />
       </div>
     </div>
-  )
+  );
 }
 
 export default App

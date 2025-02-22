@@ -6,6 +6,7 @@ import { IoHome, IoLibrary, IoClose } from "react-icons/io5";
 import { BsClipboardDataFill } from "react-icons/bs";
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { ThemeToggle } from "../utils/ThemeToggle";
@@ -47,19 +48,20 @@ function NavMenu() {
             exit={{ opacity: 0, scale: 0.6 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
         >
-            {menuItems.map(({ Icon, action, dataTip }, index) => (
-                <motion.button
+            {menuItems.map(({ Icon, dataTip, link }, index) => (
+                <motion.li
                     key={index}
                     className="btn btn-neutral tooltip tooltip-bottom min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800 ml-2"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
                     transition={{ duration: 0.2, ease: "easeOut", delay: index * 0.1 }}
-                    onClick={action}
                     data-tip={dataTip}
                 >
-                    <Icon />
-                </motion.button>
+                    <Link to={link}>
+                        <Icon />
+                    </Link>
+                </motion.li>  
             ))}
             {/* Theme Toggle Button */}
             <motion.button
@@ -75,16 +77,12 @@ function NavMenu() {
     );
 }
 
-const handlePomodoroClick = () => {
-    console.log("Iniciando Pomodoro...");
-};
-
 const menuItems = [
-    { Icon: IoHome, dataTip: "Home" },
-    { Icon: FaBusinessTime, dataTip: "Jornada" },
-    { Icon: GiTomato, dataTip: "Pomodoro", action: handlePomodoroClick },
-    { Icon: BsClipboardDataFill, dataTip: "Estatísticas"},
-    { Icon: LuNotebookPen, dataTip: "Adicionar Nota" },
-    { Icon: IoLibrary, dataTip: "Biblioteca"}
+    { Icon: IoHome, dataTip: "Home", link: "/"},
+    { Icon: FaBusinessTime, dataTip: "Jornada", link: "OfficeHours"},
+    { Icon: GiTomato, dataTip: "Pomodoro", link: "/"},
+    { Icon: BsClipboardDataFill, dataTip: "Estatísticas", link: "/"},
+    { Icon: LuNotebookPen, dataTip: "Adicionar Nota", link: "/"},
+    { Icon: IoLibrary, dataTip: "Biblioteca", link: "/"}
 ];
 
