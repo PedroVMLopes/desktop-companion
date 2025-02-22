@@ -16,23 +16,25 @@ export const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="flex flex-row items-center w-full max-w-[420px] p-1 px-1">
-            <ul className="navbar-nav">
-                <button
-                    className="btn btn-primary text-accent text-lg font-Paprika min-h-0 h-min px-[6px] py-[2px] rounded-xl shadow-sm shadow-stone-800 items-center"
-                    onClick={() => setOpen(!open)}
-                >
-                    {/*<IoMenu />*/}
-                    <p>PV</p>
-                </button>
-            </ul>
+        <div className='NavbarRender  bg-base-200 m-1 w-[98%] rounded-xl'>
+            <nav className="flex flex-row items-center w-full max-w-[420px] p-1 px-1">
+                <ul className="navbar-nav">
+                    <button
+                        className="btn btn-primary text-accent text-lg font-Paprika min-h-0 h-min px-[6px] py-[2px] rounded-xl shadow-sm shadow-stone-800 items-center"
+                        onClick={() => setOpen(!open)}
+                    >
+                        {/*<IoMenu />*/}
+                        <p>PV</p>
+                    </button>
+                </ul>
 
-            {/* Menu animation & NavMenu */}
-            <AnimatePresence>
-                {open && <NavMenu />}
-            </AnimatePresence>
-            
-        </nav>
+                {/* Menu animation & NavMenu */}
+                <AnimatePresence>
+                    {open && <NavMenu />}
+                </AnimatePresence>
+            </nav>
+        </div>
+        
     );
 };
 

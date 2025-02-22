@@ -1,4 +1,5 @@
-import { Widgets } from '../components/Widgets';
+import { SalaryInDollar } from '../components/SalaryInDollar';
+import { getDollarValue } from '../components/Widgets';
 import './App.css'
 import { BottomContent } from './BottomContent'
 import { Navbar } from './Navbar'
@@ -37,9 +38,9 @@ function App() {
     <div className='w-screen h-screen'>
       <div className={theme === "customTheme" ? "spacer backgroundLight" : "spacer backgroundDark"}>
         <div className='absolute w-full mt-1'>
-          <div className='NavbarRender bg-black bg-opacity-20 m-1 w-[98%] rounded-xl'><Navbar /></div>
+          <Navbar />
+          <SalaryInDollar />
           <div className='MainContentBackground flex flex-col bg-base-300 w-[98%] m-1 rounded-xl'>
-            <div className='WidgetsRender bg-base-200 m-1 w-[98%] rounded-xl'><Widgets /></div>
           </div>
         </div>
         <BottomContent />

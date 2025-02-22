@@ -14,13 +14,13 @@ const Clock: React.FC<ClockProps> = ({ hours, minutes, seconds }) => {
                     </span>
                 </div>
                 <p className="flex items-center text-3xl font-semibold">:</p>
-                <div className="flex flex-col p-2 rounded-box bg-base-100 text-neutral-content shadow-lg">
+                <div className="flex flex-col p-2 rounded-box bg-base-300 text-neutral-content shadow-lg">
                     <span className="countdown text-6xl justify-center p-2">
                         <span style={{ "--value": minutes } as React.CSSProperties}></span>
                     </span>
                 </div>
                 <p className="flex items-center text-3xl font-semibold">:</p>
-                <div className="flex flex-col p-2 rounded-box bg-base-100 text-neutral-content shadow-lg">
+                <div className="flex flex-col p-2 rounded-box bg-base-300 text-neutral-content shadow-lg">
                     <span className="countdown text-6xl justify-center p-2">
                         <span style={{ "--value": seconds } as React.CSSProperties}></span>
                     </span>
