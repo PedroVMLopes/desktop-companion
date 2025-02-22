@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import axios from "axios"
 
 export function isDev(): boolean{
     return process.env.NODE_ENV === 'development';
@@ -52,3 +53,13 @@ export const useCurrentDate = () => {
   
     return { formattedDate };
 };
+
+export async function getFloatDollarValue() {
+  try {
+    const response = await axios.get("https://economia.awesomeapi.com.br/json/last/USD-BRL");
+    const dollarValue = parseFloat(response.data.USDBRL.bid);
+    return dollarValue;
+  } catch (error) {
+    return 0;
+  }
+}

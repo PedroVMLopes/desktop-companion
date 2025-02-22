@@ -2,7 +2,7 @@
 import { GiTomato } from "react-icons/gi";
 import { FaBusinessTime } from "react-icons/fa";
 import { LuNotebookPen } from "react-icons/lu";
-import { IoHome } from "react-icons/io5";
+import { IoHome, IoLibrary } from "react-icons/io5";
 import { BsClipboardDataFill } from "react-icons/bs";
 import { RiBookShelfFill } from "react-icons/ri";
 
@@ -16,7 +16,7 @@ export const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className='NavbarRender  bg-base-200 m-1 w-[98%] rounded-xl'>
+        <div className='NavbarRender  bg-base-300 m-1 w-[98%] rounded-xl'>
             <nav className="flex flex-row items-center w-full max-w-[420px] p-1 px-1">
                 <ul className="navbar-nav">
                     <button
@@ -83,6 +83,6 @@ const menuItems = [
     { Icon: GiTomato, action: handlePomodoroClick },
     { Icon: BsClipboardDataFill},
     { Icon: LuNotebookPen },
-    { Icon: RiBookShelfFill}
+    { Icon: IoLibrary}
 ];
 

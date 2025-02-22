@@ -1,5 +1,4 @@
 import { SalaryInDollar } from '../components/SalaryInDollar';
-import { getDollarValue } from '../components/Widgets';
 import './App.css'
 import { BottomContent } from './BottomContent'
 import { Navbar } from './Navbar'
@@ -39,8 +38,8 @@ function App() {
       <div className={theme === "customTheme" ? "spacer backgroundLight" : "spacer backgroundDark"}>
         <div className='absolute w-full mt-1'>
           <Navbar />
-          <SalaryInDollar />
-          <div className='MainContentBackground flex flex-col bg-base-300 w-[98%] m-1 rounded-xl'>
+          <div className='MainContent flex flex-col w-[98%] m-1 mt-2 rounded-xl'>
+            <SalaryInDollar />
           </div>
         </div>
         <BottomContent />
