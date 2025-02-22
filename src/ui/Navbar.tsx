@@ -2,7 +2,7 @@
 import { GiTomato } from "react-icons/gi";
 import { FaBusinessTime } from "react-icons/fa";
 import { LuNotebookPen } from "react-icons/lu";
-import { IoHome, IoLibrary } from "react-icons/io5";
+import { IoHome, IoLibrary, IoClose } from "react-icons/io5";
 import { BsClipboardDataFill } from "react-icons/bs";
 
 import { useState } from "react";
@@ -18,13 +18,15 @@ export const Navbar = () => {
         <div className='NavbarRender  bg-base-300 m-1 w-[98%] rounded-xl'>
             <nav className="flex flex-row items-center w-full max-w-[420px] p-1 px-1">
                 <ul className="navbar-nav">
-                    <button
-                        className="btn btn-primary text-accent text-lg font-Paprika min-h-0 h-min px-[6px] py-[2px] rounded-xl shadow-sm shadow-stone-800 items-center"
-                        onClick={() => setOpen(!open)}
+                    <label
+                        className="btn btn-primary swap swap-rotate text-accent text-lg font-Paprika min-h-0 h-min px-[6px] py-[2px] rounded-xl shadow-sm shadow-stone-800 items-center"
+                        
                     >
                         {/*<IoMenu />*/}
-                        <p>PV</p>
-                    </button>
+                        <input type="checkbox" onClick={() => setOpen(!open)}/>
+                        <p className="swap-on fill-current">PV</p>
+                        <p className="swap-off fill-current text-2xl"><IoClose /></p>
+                    </label>
                 </ul>
 
                 {/* Menu animation & NavMenu */}
