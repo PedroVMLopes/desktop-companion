@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useOfficeHours } from "../../context/OfficeHoursContext";
 import { FaCaretUp, FaCaretDown, FaHourglassStart } from "react-icons/fa";
 import { VscDebugRestart } from "react-icons/vsc";
 
 export function OfficeHours() {
-    let [ totalOfficeHours, setTotalOfficeHours ] = useState(8)
+    const { hours, setHours } = useOfficeHours()
 
     return (
         <div className="OfficeHoursMain flex flex-col bg-base-200 rounded-box p-2 pt-1">
@@ -14,12 +14,12 @@ export function OfficeHours() {
             <div className="flex flex-row bg-base-100 w-full rounded-box mt-4">
                 <div className="flex flex-row max-w-20 w-full">
                     <div className="flex flex-col w-full p-2">
-                        <button onClick={() => setTotalOfficeHours(totalOfficeHours + 1)} className="btn btn-secondary bg-opacity-70 hover:bg-accent border-none w-full min-h-5 h-5 text-lg shadow-md"><FaCaretUp /></button>
+                        <button onClick={() => setHours(hours + 1)} className="btn btn-secondary bg-opacity-70 hover:bg-accent border-none w-full min-h-5 h-5 text-lg shadow-md"><FaCaretUp /></button>
                         <label className="input flex items-center justify-evenly p-1 my-1 stat-title italic bg-secondary text-secondary-content shadow-md w-full">
-                            <p>hs:</p>
-                            <input type="text" value={totalOfficeHours} readOnly className="font-bold text-center text-xl w-6" />
+                            <p className="ml-1">hs:</p>
+                            <input type="text" value={hours} readOnly className="font-bold text-xl text-center w-6" />
                         </label>
-                        <button onClick={() => setTotalOfficeHours(totalOfficeHours - 1)} className="btn btn-secondary bg-opacity-70 hover:bg-accent border-none w-full min-h-5 h-5 text-lg shadow-md"><FaCaretDown /></button>
+                        <button onClick={() => setHours(hours - 1)} className="btn btn-secondary bg-opacity-70 hover:bg-accent border-none w-full min-h-5 h-5 text-lg shadow-md"><FaCaretDown /></button>
                     </div>
                 </div>
                     <div className="flex flex-col w-full justify-around p-2">

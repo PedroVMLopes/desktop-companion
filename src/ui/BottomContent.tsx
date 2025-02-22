@@ -15,7 +15,7 @@ export function BottomContent() {
                 <DateDisplay />
                 <div className="flex flex-col">
                     <div className="flex flex-col w-min self-center">
-                        <DayProgressBar hours={hours} />
+                        <DayProgressBar dayHours={hours} />
                         <Clock hours={hours} minutes={minutes} seconds={seconds} />
                         <HourProgressBar minutes={minutes} />
                         <div className="flex ">

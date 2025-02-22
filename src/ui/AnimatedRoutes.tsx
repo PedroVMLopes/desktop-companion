@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { SalaryInDollar } from '../components/Widgets';
 import { OfficeHours } from '../pages/OfficeHours/OfficeHours';
 
+
 function AnimatedRoutes() {
   const location = useLocation();
 
