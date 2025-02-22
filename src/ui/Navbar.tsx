@@ -19,13 +19,12 @@ export const Navbar = () => {
             <nav className="flex flex-row items-center w-full max-w-[420px] p-1 px-1">
                 <ul className="navbar-nav">
                     <label
-                        className="btn btn-primary swap swap-rotate text-accent text-lg font-Paprika min-h-0 h-min px-[6px] py-[2px] rounded-xl shadow-sm shadow-stone-800 items-center"
-                        
+                        className="btn btn-primary bg-opacity-85 swap swap-rotate text-accent text-lg font-Paprika min-h-0 h-min px-[6px] py-[2px] rounded-xl shadow-sm shadow-stone-800 items-center"
                     >
                         {/*<IoMenu />*/}
                         <input type="checkbox" onClick={() => setOpen(!open)}/>
-                        <p className="swap-on fill-current">PV</p>
-                        <p className="swap-off fill-current text-2xl"><IoClose /></p>
+                        <p className="swap-off fill-current">PV</p>
+                        <p className="swap-on fill-current text-2xl"><IoClose /></p>
                     </label>
                 </ul>
 
@@ -62,13 +61,13 @@ function NavMenu() {
                     <Icon />
                 </motion.button>
             ))}
+            {/* Theme Toggle Button */}
             <motion.button
                     className="btn btn-neutral min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
-                    transition={{ duration: 0.2, ease: "easeOut", delay: 6 * 0.1 }}
-                    
+                    transition={{ duration: 0.2, ease: "easeOut", delay: (menuItems.length) * 0.1 }}
                 >
                     <ThemeToggle />
                 </motion.button>

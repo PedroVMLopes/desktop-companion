@@ -20,7 +20,7 @@ export default {
     themes: [
       {
         customTheme: {
-          primary: "#3E3232",
+          primary: "#232020",
           secondary: "#948979",
           accent: "#C14600",
           neutral: "#F4EAE0",
