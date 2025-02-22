@@ -21,7 +21,7 @@ export default {
       {
         customTheme: {
           primary: "#232020",
-          secondary: "#3C2A21",
+          secondary: "#674636",
           accent: "#C14600",
           neutral: "#F4EAE0",
           "base-100": "#FEF9E1",
