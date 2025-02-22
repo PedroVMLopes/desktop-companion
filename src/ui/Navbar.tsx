@@ -78,7 +78,7 @@ function NavMenu() {
 }
 
 const menuItems = [
-    { Icon: IoHome, dataTip: "Home", link: "/"},
+    { Icon: IoHome, link: "/"},
     { Icon: FaBusinessTime, dataTip: "Jornada", link: "OfficeHours"},
     { Icon: GiTomato, dataTip: "Pomodoro", link: "/"},
     { Icon: BsClipboardDataFill, dataTip: "Estatísticas", link: "/"},

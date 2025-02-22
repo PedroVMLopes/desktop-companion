@@ -8,7 +8,6 @@ function AnimatedRoutes() {
 
   return (
     <AnimatePresence mode="wait">
-      {/* Usamos location e key para que o AnimatePresence reconheça as mudanças */}
       <Routes location={location} key={location.pathname}>
         <Route 
           path="/" 
