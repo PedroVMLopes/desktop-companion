@@ -4,7 +4,6 @@ import { FaBusinessTime } from "react-icons/fa";
 import { LuNotebookPen } from "react-icons/lu";
 import { IoHome, IoLibrary } from "react-icons/io5";
 import { BsClipboardDataFill } from "react-icons/bs";
-import { RiBookShelfFill } from "react-icons/ri";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -47,25 +46,27 @@ function NavMenu() {
             exit={{ opacity: 0, scale: 0.6 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
         >
-            {menuItems.map(({ Icon, action }, index) => (
+            {menuItems.map(({ Icon, action, dataTip }, index) => (
                 <motion.button
                     key={index}
-                    className="btn btn-neutral min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800"
+                    className="btn btn-neutral tooltip tooltip-bottom min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
                     transition={{ duration: 0.2, ease: "easeOut", delay: index * 0.1 }}
                     onClick={action}
+                    data-tip={dataTip}
                 >
                     <Icon />
                 </motion.button>
             ))}
             <motion.button
-                    className="btn btn-neutral  min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800"
+                    className="btn btn-neutral min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
                     transition={{ duration: 0.2, ease: "easeOut", delay: 6 * 0.1 }}
+                    
                 >
                     <ThemeToggle />
                 </motion.button>
@@ -78,11 +79,11 @@ const handlePomodoroClick = () => {
 };
 
 const menuItems = [
-    { Icon: IoHome},
-    { Icon: FaBusinessTime },
-    { Icon: GiTomato, action: handlePomodoroClick },
-    { Icon: BsClipboardDataFill},
-    { Icon: LuNotebookPen },
-    { Icon: IoLibrary}
+    { Icon: IoHome, dataTip: "Home" },
+    { Icon: FaBusinessTime, dataTip: "Jornada" },
+    { Icon: GiTomato, dataTip: "Pomodoro", action: handlePomodoroClick },
+    { Icon: BsClipboardDataFill, dataTip: "Estatísticas"},
+    { Icon: LuNotebookPen, dataTip: "Adicionar Nota" },
+    { Icon: IoLibrary, dataTip: "Biblioteca"}
 ];
 

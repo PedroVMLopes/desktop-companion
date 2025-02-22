@@ -1,4 +1,4 @@
-import { SalaryInDollar } from '../components/SalaryInDollar';
+import { SalaryInDollar } from '../components/Widgets';
 import './App.css'
 import { BottomContent } from './BottomContent'
 import { Navbar } from './Navbar'
