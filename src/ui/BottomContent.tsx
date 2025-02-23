@@ -14,7 +14,7 @@ export function BottomContent() {
             <div className="bg-info rounded-3xl mt-6 pt-1">
                 <DateDisplay />
                 <div className="flex flex-col">
-                    <div className="flex flex-col w-min self-center">
+                    <div className="flex flex-col w-full self-center">
                         <OfficeHoursProgressBar />
                         <Clock hours={hours} minutes={minutes} seconds={seconds} />
                         <HourProgressBar minutes={minutes} />
