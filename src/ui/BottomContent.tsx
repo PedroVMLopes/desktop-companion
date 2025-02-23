@@ -2,7 +2,7 @@
 import { useCurrentTime } from "../utils/util";
 import DateDisplay from "../components/DateDisplay";
 import Clock from "../components/Clock";
-import DayProgressBar from "../components/DayProgressBar";
+import OfficeHoursProgressBar from "../components/OfficeHoursProgressBar";
 import HourProgressBar from "../components/HourProgressBar";
 import MinuteProgressBar from "../components/MinuteProgressBar";
 
@@ -15,7 +15,7 @@ export function BottomContent() {
                 <DateDisplay />
                 <div className="flex flex-col">
                     <div className="flex flex-col w-min self-center">
-                        <DayProgressBar dayHours={hours} />
+                        <OfficeHoursProgressBar />
                         <Clock hours={hours} minutes={minutes} seconds={seconds} />
                         <HourProgressBar minutes={minutes} />
                         <div className="flex ">
