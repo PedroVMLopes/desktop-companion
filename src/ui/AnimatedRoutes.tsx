@@ -2,6 +2,7 @@ import { useLocation, Routes, Route } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { SalaryInDollar } from '../components/Widgets';
 import { OfficeHours } from '../pages/OfficeHours/OfficeHours';
+import { Pomodoro } from '../pages/Pomodoro/Pomodoro';
 
 
 function AnimatedRoutes() {
@@ -33,6 +34,19 @@ function AnimatedRoutes() {
               transition={{ duration: 0.3 }}
             >
               <OfficeHours />
+            </motion.div>
+          } 
+        />
+        <Route 
+          path="Pomodoro" 
+          element={
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              exit={{ opacity: 0, x: 20 }} 
+              transition={{ duration: 0.3 }}
+            >
+              <Pomodoro />
             </motion.div>
           } 
         />

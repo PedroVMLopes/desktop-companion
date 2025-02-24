@@ -18,9 +18,7 @@ export function BottomContent() {
                         <OfficeHoursProgressBar />
                         <Clock hours={hours} minutes={minutes} seconds={seconds} />
                         <HourProgressBar minutes={minutes} />
-                        <div className="flex ">
-                            <MinuteProgressBar seconds={seconds} />
-                        </div>
+                        <MinuteProgressBar seconds={seconds} />
                     </div>
                 </div>
             </div>

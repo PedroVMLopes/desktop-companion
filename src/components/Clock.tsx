@@ -19,6 +19,7 @@ const Clock: React.FC<ClockProps> = ({ hours, minutes }) => {
                         <span style={{ "--value": minutes } as React.CSSProperties}></span>
                     </span>
                 </div>
+                {/* The seconds monitor in the clock consumes a huge amount of processing */}
                 {/*
                 <p className="flex items-center text-3xl font-semibold">:</p>
                 <div className="flex flex-col p-2 rounded-box bg-base-300 text-neutral-content shadow-xl">

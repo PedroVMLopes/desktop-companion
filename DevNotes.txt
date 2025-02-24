@@ -1,0 +1,3 @@
+----------------------------------------------------------------
+-- OfficeHoursContext
+-> Create alerts on the "Iniciar Jornada" and "Finalizar Jornada" button click;

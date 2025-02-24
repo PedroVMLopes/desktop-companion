@@ -80,7 +80,7 @@ function NavMenu() {
 const menuItems = [
     { Icon: IoHome, link: "/"},
     { Icon: FaBusinessTime, dataTip: "Jornada", link: "OfficeHours"},
-    { Icon: GiTomato, dataTip: "Pomodoro", link: "/"},
+    { Icon: GiTomato, dataTip: "Pomodoro", link: "Pomodoro"},
     { Icon: BsClipboardDataFill, dataTip: "Estatísticas", link: "/"},
     { Icon: LuNotebookPen, dataTip: "Adicionar Nota", link: "/"},
     { Icon: IoLibrary, dataTip: "Biblioteca", link: "/"}
