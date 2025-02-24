@@ -1,5 +1,5 @@
 //import { IoMenu } from "react-icons/io5";
-import { GiTomato } from "react-icons/gi";
+import { FaTasks } from "react-icons/fa";
 import { FaBusinessTime } from "react-icons/fa";
 import { LuNotebookPen } from "react-icons/lu";
 import { IoHome, IoLibrary, IoClose } from "react-icons/io5";
@@ -80,7 +80,7 @@ function NavMenu() {
 const menuItems = [
     { Icon: IoHome, link: "/"},
     { Icon: FaBusinessTime, dataTip: "Jornada", link: "OfficeHours"},
-    { Icon: GiTomato, dataTip: "Pomodoro", link: "Pomodoro"},
+    { Icon: FaTasks, dataTip: "Tarefas Completadas", link: "CompletedTasks"},
     { Icon: BsClipboardDataFill, dataTip: "Estatísticas", link: "/"},
     { Icon: LuNotebookPen, dataTip: "Adicionar Nota", link: "/"},
     { Icon: IoLibrary, dataTip: "Biblioteca", link: "/"}
