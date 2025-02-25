@@ -13,7 +13,7 @@ export function SalaryInDollar() {
     }, []);
 
     return (
-        <div className='SalaryInDollar flex bg-base-200 rounded-box p-2 py-1'>
+        <div className='SalaryInDollar flex bg-base-200 rounded-box mx-1 p-2 py-1'>
             <div className="card bg-base-300 rounded-box p-2 px-3 flex-row font-Poppins items-center">
                 <h1 className="stat-title">U$D:</h1><h2 className="ml-1 font-bold">{dollar?.toFixed(3)}</h2>
             </div>
