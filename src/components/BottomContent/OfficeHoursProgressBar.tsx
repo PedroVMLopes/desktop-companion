@@ -1,4 +1,4 @@
-import { useOfficeHours } from "../context/OfficeHoursContext";
+import { useOfficeHours } from "../../context/OfficeHoursContext";
 
 const OfficeHoursProgressBar = () => {
     const { hours, elapsedMinutes } = useOfficeHours();

@@ -1,10 +1,10 @@
 // src/pages/BottomContent.tsx
-import { useCurrentTime } from "../utils/util";
-import DateDisplay from "../components/DateDisplay";
-import Clock from "../components/Clock";
-import OfficeHoursProgressBar from "../components/OfficeHoursProgressBar";
-import HourProgressBar from "../components/HourProgressBar";
-import MinuteProgressBar from "../components/MinuteProgressBar";
+import { useCurrentTime } from "../utils/util"
+import DateDisplay from "../components//BottomContent/DateDisplay";
+import Clock from "../components/BottomContent/Clock";
+import OfficeHoursProgressBar from "../components/BottomContent/OfficeHoursProgressBar";
+import HourProgressBar from "../components/BottomContent/HourProgressBar";
+import MinuteProgressBar from "../components/BottomContent/MinuteProgressBar";
 
 export function BottomContent() {
     const { hours, minutes, seconds } = useCurrentTime();

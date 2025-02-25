@@ -2,29 +2,30 @@ import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion";
 
 import { IoMdAdd } from "react-icons/io";
+import { FaPause, FaPlay } from "react-icons/fa";
+import { PiPause } from "react-icons/pi";
 
 interface SubTask {
     id: string;
     name: string;
     timeSpent: number;
     timeOfCreation: number;
+    isRunning: boolean;
     completed: boolean;
 }
 
-interface TaskProps {
+interface Task {
     id: string;
     name: string;
     timeSpent: number;
     timeOfCreation: number;
+    isRunning: boolean;
     completed: boolean;
     subTasks: SubTask[];
-    onToggleComplete: (id: string) => void;
-    onAddSubTask: (taskId: string, subTaskName: string) => void;
-    onToggleSubTaskComplete: (taskId: string, subTaskId: string) => void;
-    onTimeUpdate: (id: string, time: number) => void;
 }
 
 export function Tasks() {
+    const [tasks, setTasks] = useState<Task[]>([]);
     const [ isMenuAddTaskExpanded, setMenuAddTaskExpanded ] = useState(false);
 
     const handleMenuAddTask = () => {
@@ -91,9 +92,12 @@ function TaskCard() {
             transition={{ duration: 0.5 }}
             className="addTask bg-base-100 rounded-box mt-2 p-2"
         >
-            <label className="label cursor-pointer border-2 border-base-200 rounded-box justify-start flex flex-row items-center pl-2">
-                <input type="checkbox" className="checkbox checkbox-sm checkbox-accent" />
-                <h1 className="ml-2 font-Poppins font-bold text-accent">Nome da task</h1>
+            <label className="label cursor-pointer border-2 border-base-200 rounded-box justify-between flex flex-row items-center px-2">
+                <div className="flex flex-row mt-1">
+                    <input type="checkbox" className="checkbox checkbox-sm checkbox-accent" />
+                    <h1 className="ml-2 font-Poppins font-bold text-accent">Nome da task</h1>
+                </div>
+                <button className="btn btn-outline btn-accent btn-xs"> <PiPause /> </button>
             </label>
             <div className="p-2 pt-0">
                 <div className="flex flex-row items-center text-center mt-1 justify-between">
