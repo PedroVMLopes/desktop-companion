@@ -16,7 +16,7 @@ export const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className='NavbarRender  bg-base-300 m-1 w-[98%] rounded-xl'>
+        <div className='NavbarRender bg-base-300 m-1 mx-2 rounded-xl'>
             <nav className="flex flex-row items-center w-full max-w-[420px] p-1">
                 <ul className="navbar-nav">
                     <label

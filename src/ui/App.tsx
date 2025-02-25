@@ -44,7 +44,7 @@ function App() {
           <div className='absolute w-full mt-1'>
             <Router>
               <Navbar />
-              <main className='MainContent flex flex-col w-[98%] m-1 mt-2 rounded-xl'>
+              <main className='MainContent flex flex-col m-2 mt-2 rounded-xl'>
                 <AnimatedRoutes />
               </main>
             </Router>
