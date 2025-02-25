@@ -69,11 +69,13 @@ function AddTaskMenu({ handleAddTaskMenu }: { handleAddTaskMenu: () => void }) {
 
 function SubTask() {
     return (
-        <div className="form-control my-1">
-            <label className="label cursor-pointer justify-start w-full">
-                <input type="checkbox" className="checkbox checkbox-xs rounded-md" />
-                <input type="text" placeholder="Nome da Sub-task" className=" input input-sm label-text pl-1"></input>
-                <input type="text" value={"0 horas e 15 min"} readOnly className="bg-base-200 text-secondary text-sm p-0.5 pl-2 ml-2 rounded-md w-min max-w-[140px]" />
+        <div className="SubTask form-control">
+            <label className="label cursor-pointer w-full pl-0">
+                <div className="flex flex-row items-center">
+                    <input type="checkbox" className="checkbox checkbox-xs rounded-md" />
+                    <input type="text" placeholder="Nome da Sub-task" className="input input-sm bg-base-200 label-text pl-1"></input>
+                </div>
+                <input type="text" value={"0 horas e 15 min"} readOnly className="bg-base-200 text-secondary text-end text-sm p-0.5 pl-2 ml-2 rounded-md w-min max-w-[140px]" />
             </label>
         </div>
     )
@@ -86,18 +88,21 @@ function TaskCard() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.5 }}
-            className="addTask bg-base-100 rounded-box m-1 mt-2 p-2 pl-3"
+            className="addTask bg-base-100 rounded-box m-1 mt-2 p-2"
         >
-            <label className="label cursor-pointer justify-start flex flex-row items-center">
+            <label className="label cursor-pointer bg-base-200 rounded-box justify-start flex flex-row items-center pl-2">
                 <input type="checkbox" className="checkbox checkbox-sm checkbox-accent" />
                 <h1 className="ml-2 font-Poppins font-bold text-accent">Nome da task</h1>
             </label>
-            <div className="flex flex-row items-center text-center mt-1">
-                <h1 className="font-Poppins text-nowrap ml-1">Tempo Gasto: </h1>
-                <input type="text" value={"0 horas e 42 min"} readOnly className="bg-base-200 text-secondary font-semibold p-1 pl-2 ml-2 rounded-md w-full" />
+            <div className="bg-base-200 rounded-box p-2 pt-1 mt-1">
+                <div className="flex flex-row items-center text-center mt-1 justify-between">
+                    <h1 className="font-Poppins text-nowrap mt-1">Tempo Gasto: </h1>
+                    <input type="text" value={"10 horas e 42 min"} readOnly className="bg-base-200 text-secondary text-end font-semibold pl-2 mt-0.5 ml-2 rounded-md w-min max-w-[160px]" />
+                </div>
+                <SubTask />
+                <button className="btn btn-xs btn-outline btn-secondary opacity-80 mt-1 mb-2">Sub-task <IoMdAdd /></button>
             </div>
-            <SubTask />
-            <button className="btn btn-xs btn-outline btn-secondary opacity-80 mt-2">Sub-task <IoMdAdd /></button>
+            
         </motion.div>
     )
 }
