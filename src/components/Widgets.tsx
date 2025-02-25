@@ -13,12 +13,12 @@ export function SalaryInDollar() {
     }, []);
 
     return (
-        <div className='SalaryInDollar flex bg-base-200 rounded-box mx-1 p-2 py-1'>
-            <div className="card bg-base-300 rounded-box p-2 px-3 flex-row font-Poppins items-center">
+        <div className='SalaryInDollar flex bg-base-100 rounded-box mx-1 px-2'>
+            <div className="card rounded-box p-2 px-3 flex-row font-Poppins items-center">
                 <h1 className="stat-title">U$D:</h1><h2 className="ml-1 font-bold">{dollar?.toFixed(3)}</h2>
             </div>
-            <div className="divider divider-horizontal"></div>
-            <div className="card bg-base-300 rounded-box py-1 flex-grow grid place-items-center">
+            <div className="divider divider-horizontal py-2"></div>
+            <div className="card rounded-box py-1 flex-grow grid place-items-center">
                 <h1 className="stat-title">Salário Base:</h1>
                 <h2 className="font-bold">
                     {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(dollar * 2000)}
