@@ -5,7 +5,7 @@ import { IoMdAdd } from "react-icons/io";
 import { FaPause, FaPlay } from "react-icons/fa";
 import { PiPause } from "react-icons/pi";
 
-interface SubTask {
+export interface SubTask {
     id: string;
     name: string;
     timeSpent: number;
@@ -14,7 +14,7 @@ interface SubTask {
     completed: boolean;
 }
 
-interface Task {
+export interface Task {
     id: string;
     name: string;
     timeSpent: number;
