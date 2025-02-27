@@ -3,9 +3,15 @@
         "strict": true,
         "target": "ESNext",
         "module": "NodeNext",
+        "moduleResolution": "NodeNext",
         "outDir": "../../dist-electron",
         "skipLibCheck": true,
-        "noEmit": true,
-        "allowImportingTsExtensions": true,
-    }
+        "noEmit": false,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "sourceMap": true,
+        "allowJs": true
+    },
+    "include": ["./**/*.ts", "./**/*.js"],
+    "exclude": ["node_modules"]
 }

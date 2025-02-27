@@ -1,17 +1,18 @@
 import { app, BrowserWindow, ipcMain } from "electron";
 import path from "path";
 import { isDev } from "../utils/util.js";
-import { Database } from "sqlite3";
+import BetterSqlite3 from 'better-sqlite3';
 
-import { SubTask, Task } from "../Types/types.ts";
+import { SubTask, Task } from "../Types/types.js";
 
 let mainWindow: BrowserWindow;
-let db: Database;
+let db: BetterSqlite3.Database;
 
+console.log("🚀 Electron está iniciando...");
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 600,
+    width: 900,
     height: 900,
     webPreferences: {
       preload: path.join(__dirname, "./utils/preload.js"),
@@ -28,63 +29,92 @@ function createWindow() {
 }
 
 function setupDatabase() {
-  const dbPath = path.join(app.getPath("userData"), "database.sqlite");
-  console.log("Caminho do banco de dados:", dbPath);
-
-  db = new Database(path.join(app.getPath("userData"), "database.sqlite"), (err) => {
-    if (err) {
-      console.error("Erro ao abrir o banco de dados:", err.message);
-    }
-  });
-
-  // Tasks Table
-  db.prepare(
-    `CREATE TABLE IF NOT EXISTS tasks (
-      id TEXT PRIMARY KEY,
-      name TEXT NOT NULL,
-      timeSpent INTEGER DEFAULT 0,
-      timeOfCreation INTEGER NOT NULL,
-      isRunning BOOLEAN DEFAULT 0,
-      completed BOOLEAN DEFAULT 0
-    )`
-  ).run();
-
-  // Sub-tasks Table
-  db.prepare(
-    `CREATE TABLE IF NOT EXISTS subtasks (
-      id TEXT PRIMARY KEY,
-      taskId TEXT NOT NULL,
-      name TEXT NOT NULL,
-      timeSpent INTEGER DEFAULT 0,
-      timeOfCreation INTEGER NOT NULL,
-      isRunning BOOLEAN DEFAULT 0,
-      completed BOOLEAN DEFAULT 0,
-      FOREIGN KEY (taskId) REFERENCES tasks (id) ON DELETE CASCADE
-    )`
-  ).run();
+  try {
+    const userDataPath = app.getPath("userData");
+    console.log("User data path:", userDataPath);
+    
+    const dbPath = path.join(userDataPath, "database.sqlite");
+    console.log("Caminho do banco de dados:", dbPath);
+    
+    // better-sqlite3 throws an error if there's an issue opening the database
+    db = new BetterSqlite3(dbPath);
+    console.log("Database connection established successfully");
+    
+    // Create tables - better-sqlite3 uses exec for running statements without parameters
+    db.exec(`
+      CREATE TABLE IF NOT EXISTS tasks (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        timeSpent INTEGER DEFAULT 0,
+        timeOfCreation INTEGER NOT NULL,
+        isRunning INTEGER DEFAULT 0,
+        completed INTEGER DEFAULT 0
+      );
+      
+      CREATE TABLE IF NOT EXISTS subtasks (
+        id TEXT PRIMARY KEY,
+        taskId TEXT NOT NULL,
+        name TEXT NOT NULL,
+        timeSpent INTEGER DEFAULT 0,
+        timeOfCreation INTEGER NOT NULL,
+        isRunning INTEGER DEFAULT 0,
+        completed INTEGER DEFAULT 0,
+        FOREIGN KEY (taskId) REFERENCES tasks (id) ON DELETE CASCADE
+      );
+    `);
+    
+    console.log("Database tables created successfully");
+    
+    // Test insert to verify database is working
+    const stmt = db.prepare(`INSERT OR IGNORE INTO tasks 
+      (id, name, timeSpent, timeOfCreation, isRunning, completed) 
+      VALUES (?, ?, ?, ?, ?, ?)`);
+    
+    const testResult = stmt.run(
+      "test-task-id", 
+      "Test Task", 
+      0, 
+      Date.now(), 
+      0, 
+      0
+    );
+    
+    console.log("Test insert result:", testResult);
+    
+  } catch (error: unknown) {
+    const err = error as Error;
+    console.error("Database setup error:", err.message);
+  }
 }
 
 app.whenReady().then(() => {
   setupDatabase();
   createWindow();
 
-  // Configuring IPC events to comunicate with renderer
+  // Configuring IPC events to communicate with renderer
   ipcMain.handle("add-task", async (_event, task: Task) => {
-    return new Promise((resolve, reject) => {
-      db.run(
-        `INSERT INTO tasks (id, name, timeSpent, timeOfCreation, isRunning, completed)
-        VALUES (?, ?, ?, ?, ?, ?)`,
-        [task.id, task.name, task.timeSpent, task.timeOfCreation, +task.isRunning, +task.completed],
-        (err) => {
-          if (err) {
-            console.error("Erro ao adicionar tarefa:", err.message);
-            reject({ success: false, error: err.message });
-          } else {
-            resolve({ success: true });
-          }
-        }
+    try {
+      // better-sqlite3 uses prepared statements differently
+      const stmt = db.prepare(`
+        INSERT INTO tasks (id, name, timeSpent, timeOfCreation, isRunning, completed)
+        VALUES (?, ?, ?, ?, ?, ?)
+      `);
+      
+      const result = stmt.run(
+        task.id, 
+        task.name, 
+        task.timeSpent, 
+        task.timeOfCreation, 
+        +task.isRunning, 
+        +task.completed
       );
-    });
+      
+      return { success: true, changes: result.changes };
+    } catch (error: unknown) {
+      const err = error as Error;
+      console.error("Erro ao adicionar tarefa:", err.message);
+      return { success: false, error: err.message };
+    }
   });
 
   app.on("activate", () => {
@@ -94,7 +124,7 @@ app.whenReady().then(() => {
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
-    db.close();
+    if (db) db.close();
     app.quit();
   }
 });
