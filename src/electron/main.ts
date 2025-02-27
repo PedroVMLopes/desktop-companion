@@ -15,7 +15,7 @@ function createWindow() {
     width: 900,
     height: 900,
     webPreferences: {
-      preload: path.join(__dirname, "./utils/preload.js"),
+      preload: path.join(app.getAppPath(), "dist-electron/utils/preload.js"),
       nodeIntegration: false,
       contextIsolation: true,
     },
@@ -43,22 +43,22 @@ function setupDatabase() {
     // Create tables - better-sqlite3 uses exec for running statements without parameters
     db.exec(`
       CREATE TABLE IF NOT EXISTS tasks (
-        id TEXT PRIMARY KEY,
+        id INTEGER PRIMARY KEY,
         name TEXT NOT NULL,
         timeSpent INTEGER DEFAULT 0,
-        timeOfCreation INTEGER NOT NULL,
+        timeOfCreation TEXT NOT NULL,
         isRunning INTEGER DEFAULT 0,
-        completed INTEGER DEFAULT 0
+        isCompleted INTEGER DEFAULT 0
       );
       
       CREATE TABLE IF NOT EXISTS subtasks (
-        id TEXT PRIMARY KEY,
-        taskId TEXT NOT NULL,
+        id INTEGER PRIMARY KEY,
+        taskId INTEGER NOT NULL,
         name TEXT NOT NULL,
         timeSpent INTEGER DEFAULT 0,
-        timeOfCreation INTEGER NOT NULL,
+        timeOfCreation TEXT NOT NULL,
         isRunning INTEGER DEFAULT 0,
-        completed INTEGER DEFAULT 0,
+        isCompleted INTEGER DEFAULT 0,
         FOREIGN KEY (taskId) REFERENCES tasks (id) ON DELETE CASCADE
       );
     `);
@@ -67,7 +67,7 @@ function setupDatabase() {
     
     // Test insert to verify database is working
     const stmt = db.prepare(`INSERT OR IGNORE INTO tasks 
-      (id, name, timeSpent, timeOfCreation, isRunning, completed) 
+      (id, name, timeSpent, timeOfCreation, isRunning, isCompleted) 
       VALUES (?, ?, ?, ?, ?, ?)`);
     
     const testResult = stmt.run(
@@ -96,7 +96,7 @@ app.whenReady().then(() => {
     try {
       // better-sqlite3 uses prepared statements differently
       const stmt = db.prepare(`
-        INSERT INTO tasks (id, name, timeSpent, timeOfCreation, isRunning, completed)
+        INSERT INTO tasks (id, name, timeSpent, timeOfCreation, isRunning, isCompleted)
         VALUES (?, ?, ?, ?, ?, ?)
       `);
       
