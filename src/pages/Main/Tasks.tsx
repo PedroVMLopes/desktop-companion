@@ -1,28 +1,12 @@
 import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion";
+import { Task, SubTask } from "../../Types/types";
 
 import { IoMdAdd } from "react-icons/io";
 import { FaPause, FaPlay } from "react-icons/fa";
 import { PiPause } from "react-icons/pi";
 
-export interface SubTask {
-    id: string;
-    name: string;
-    timeSpent: number;
-    timeOfCreation: number;
-    isRunning: boolean;
-    completed: boolean;
-}
 
-export interface Task {
-    id: string;
-    name: string;
-    timeSpent: number;
-    timeOfCreation: number;
-    isRunning: boolean;
-    completed: boolean;
-    subTasks: SubTask[];
-}
 
 export function Tasks() {
     const [tasks, setTasks] = useState<Task[]>([]);
@@ -69,7 +53,7 @@ function AddTaskMenu({ handleMenuAddTask }: { handleMenuAddTask: () => void }) {
     );
 }
 
-function SubTask() {
+function SubTaskCard() {
     return (
         <div className="SubTask form-control">
             <label className="label cursor-pointer w-full px-0">
@@ -104,7 +88,7 @@ function TaskCard() {
                     <h1 className="font-Poppins text-nowrap mt-1">Tempo Gasto: </h1>
                     <input type="text" value={"0 horas e 42 min"} readOnly className="bg-base-100 text-secondary text-end font-semibold pl-2 mt-0.5 ml-2 rounded-md w-min max-w-[160px]" />
                 </div>
-                <SubTask />
+                <SubTaskCard />
                 <button className="btn btn-xs btn-outline btn-secondary opacity-80 my-1">Sub-task <IoMdAdd /></button>
             </div>
         </motion.div>

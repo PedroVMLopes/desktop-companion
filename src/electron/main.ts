@@ -3,7 +3,7 @@ import path from "path";
 import { isDev } from "../utils/util.js";
 import { Database } from "sqlite3";
 
-import { Task, SubTask } from "../pages/Main/Tasks.tsx";
+import { SubTask, Task } from "../Types/types.ts";
 
 let mainWindow: BrowserWindow;
 let db: Database;
@@ -13,7 +13,7 @@ function createWindow() {
     width: 600,
     height: 900,
     webPreferences: {
-      preload: path.join(__dirname, "./utils/preload.ts"),
+      preload: path.join(__dirname, "./utils/preload.js"),
       nodeIntegration: false,
       contextIsolation: true,
     },
@@ -27,7 +27,11 @@ function createWindow() {
 }
 
 function setupDatabase() {
-  db = new Database(path.join(app.getPath("userData"), "database.sqlite"));
+  db = new Database(path.join(app.getPath("userData"), "database.sqlite"), (err) => {
+    if (err) {
+      console.error("Erro ao abrir o banco de dados:", err.message);
+    }
+  });
 
   // Tasks Table
   db.prepare(
@@ -36,8 +40,8 @@ function setupDatabase() {
       name TEXT NOT NULL,
       timeSpent INTEGER DEFAULT 0,
       timeOfCreation INTEGER NOT NULL,
-      isRunning INTEGER DEFAULT 0,
-      completed INTEGER DEFAULT 0
+      isRunning BOOLEAN DEFAULT 0,
+      completed BOOLEAN DEFAULT 0
     )`
   ).run();
 
@@ -49,8 +53,8 @@ function setupDatabase() {
       name TEXT NOT NULL,
       timeSpent INTEGER DEFAULT 0,
       timeOfCreation INTEGER NOT NULL,
-      isRunning INTEGER DEFAULT 0,
-      completed INTEGER DEFAULT 0,
+      isRunning BOOLEAN DEFAULT 0,
+      completed BOOLEAN DEFAULT 0,
       FOREIGN KEY (taskId) REFERENCES tasks (id) ON DELETE CASCADE
     )`
   ).run();
@@ -61,13 +65,22 @@ app.whenReady().then(() => {
   createWindow();
 
   // Configuring IPC events to comunicate with renderer
-  ipcMain.handle("add-task", (_event, task: Task) => {
-    const stmt = db.prepare(`
-      INSERT INTO tasks (id, name, timeSpent, timeOfCreation, isRunning, completed)
-      VALUES (?, ?, ?, ?, ?, ?)
-    `);
-    stmt.run(task.id, task.name, task.timeSpent, task.timeOfCreation, +task.isRunning, +task.completed);
-    return { success: true };
+  ipcMain.handle("add-task", async (_event, task: Task) => {
+    return new Promise((resolve, reject) => {
+      db.run(
+        `INSERT INTO tasks (id, name, timeSpent, timeOfCreation, isRunning, completed)
+        VALUES (?, ?, ?, ?, ?, ?)`,
+        [task.id, task.name, task.timeSpent, task.timeOfCreation, +task.isRunning, +task.completed],
+        (err) => {
+          if (err) {
+            console.error("Erro ao adicionar tarefa:", err.message);
+            reject({ success: false, error: err.message });
+          } else {
+            resolve({ success: true });
+          }
+        }
+      );
+    });
   });
 
   app.on("activate", () => {

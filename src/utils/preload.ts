@@ -1,4 +1,4 @@
-import { Task, SubTask } from "../pages/Main/Tasks";
+import { SubTask, Task } from "../Types/types";
 
 const { contextBridge, ipcRenderer } = require("electron");
 
