@@ -8,6 +8,7 @@ import { SubTask, Task } from "../Types/types.ts";
 let mainWindow: BrowserWindow;
 let db: Database;
 
+
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 600,
@@ -27,6 +28,9 @@ function createWindow() {
 }
 
 function setupDatabase() {
+  const dbPath = path.join(app.getPath("userData"), "database.sqlite");
+  console.log("Caminho do banco de dados:", dbPath);
+
   db = new Database(path.join(app.getPath("userData"), "database.sqlite"), (err) => {
     if (err) {
       console.error("Erro ao abrir o banco de dados:", err.message);
