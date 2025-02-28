@@ -4,7 +4,6 @@ import { Task, SubTask } from "../../Types/types";
 
 import { IoMdAdd } from "react-icons/io";
 import { FaPause, FaPlay, FaMinus, FaPlus } from "react-icons/fa";
-import { PiPause } from "react-icons/pi";
 
 
 
@@ -52,14 +51,17 @@ function AddTaskMenu({ handleMenuAddTask }: { handleMenuAddTask: () => void }) {
 
 function SubTaskCard() {
     return (
-        <div className="SubTask form-control">
-            <label className="label cursor-pointer w-full px-0">
-                <div className="flex flex-row items-center">
-                    <input type="checkbox" className="checkbox checkbox-xs rounded-md" />
-                    <input type="text" placeholder="Nome da Sub-task" className="input input-sm bg-base-100 label-text pl-1"></input>
-                </div>
-            </label>
-            <input type="text" value={"0 horas e 15 min"} readOnly className="bg-base-100 text-secondary text-end text-sm p-0.5 ml-2 rounded-md w-min max-w-[120px]" />
+        <div className="flex flex-row justify-between">
+            <div className="SubTask form-control px-4 mb-2">
+                <label className="label cursor-pointer w-full p-0">
+                    <div className="flex flex-row items-center">
+                        <input type="checkbox" className="checkbox checkbox-xs rounded-md" />
+                        <input type="text" placeholder="Nome da Sub-task" className="input input-sm bg-base-100 label-text pl-1"></input>
+                    </div>
+                </label>
+                <input type="text" value={"0 horas e 15 min"} readOnly className="bg-base-100 text-secondary text-left text-sm ml-0.5 rounded-md w-min max-w-[110px]" />
+            </div>
+            <button className="btn btn-ghost btn-accent btn-sm p-2 mr-4 opacity-60"> <FaPause /> </button>
         </div>
     )
 }
@@ -71,23 +73,23 @@ function TaskCard() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.5 }}
-            className="addTask bg-base-100 rounded-box mt-1 p-2 custom-border"
+            className="addTask bg-base-100 rounded-box mt-1 custom-border"
         >
-            <label className="label cursor-pointer rounded-box justify-between flex flex-row items-center px-2 pt-1 text-accent">
+            <label className="label cursor-pointer rounded-box justify-between flex flex-row items-center px-4 p-2 text-accent">
                 <div className="flex flex-row mt-1">
                     <input type="checkbox" className="checkbox checkbox-sm checkbox-accent" />
                     <h1 className="ml-2 font-Poppins font-bold">Nome da task</h1>
                 </div>
                 <button className="btn btn-ghost btn-accent btn-sm p-2"> <FaPause /> </button>
             </label>
-            <div className="p-2 pt-0">
-                <div className="divider m-0"></div>
-                <div className="flex flex-row items-baseline text-center">
-                    <input type="text" value={"10 horas e 42 min"} readOnly className="bg-base-100 text-secondary text-end font-semibold font-Poppins rounded-md w-min max-w-[140px]" />
+            <div className="pt-0">
+                <div className="flex flex-row items-baseline text-center px-4">
+                    <input type="text" value={"0 horas e 42 min"} readOnly className="bg-base-100 text-secondary text-right font-semibold font-Poppins rounded-md w-min max-w-[140px]" />
                     <h1 className="ml-1 font-Poppins font-semibold text-nowrap text-secondary ">na tarefa </h1>
                 </div>
+                <div className="divider m-0"></div>
                 <SubTaskCard />
-                <button className="btn btn-xs btn-outline btn-secondary opacity-80 my-1">Sub-task <IoMdAdd /></button>
+                <button className="btn btn-xs btn-outline btn-secondary opacity-80 my-2 mx-4">Sub-task <IoMdAdd /></button>
             </div>
         </motion.div>
     )
