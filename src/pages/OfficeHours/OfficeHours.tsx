@@ -7,7 +7,7 @@ export function OfficeHours() {
     const [selectorHours, setSelectorHours] = useState(8);
 
     return (
-        <div className="OfficeHoursMain flex flex-col bg-base-200 rounded-box p-2 pt-1">
+        <div className="OfficeHoursMain flex flex-col bg-base-100 rounded-box p-2 pt-1 custom-border">
             <div className="flex flex-col mt-1">
                 <h1 className="flex font-Shrikhand text-xl pl-2">Jornada Diária</h1>
                 <h2 className="stat-title text-sm italic text-wrap pl-1">Utiliza a barra abaixo do contador do dia para visualizar o tempo total que você quer permanecer focado</h2>

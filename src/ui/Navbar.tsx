@@ -18,11 +18,11 @@ export const Navbar = () => {
     return (
         <AnimatePresence>
             <motion.div 
-                className={`NavbarRender bg-base-100 m-1 mx-2 px-0.5 rounded-box custom-border ${!open ? "w-min" : ""}`}
+                className={`NavbarRender bg-base-100 m-1 mx-2 px-0.5 py-0.5 rounded-box custom-border ${!open ? "w-min" : ""}`}
                 initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
+                animate={{ scale: 1, width: open ? "96%" : "60px" }}
                 exit={{ scale: 0.6 }}
-                transition={{ duration: 0.2, ease: "easeInOut" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
             >
                 <nav className="flex flex-row items-center w-full p-1">
                     <ul className="navbar-nav">
@@ -49,7 +49,7 @@ export const Navbar = () => {
 function NavMenu() {
     return (
         <motion.ul
-            className="flex flex-row w-full items-center"
+            className="flex flex-row w-full items-center ml-2"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.6 }}
@@ -58,7 +58,7 @@ function NavMenu() {
             {menuItems.map(({ Icon, dataTip, link }, index) => (
                 <motion.li
                     key={index}
-                    className="btn btn-neutral tooltip tooltip-bottom min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800 ml-2 border-info border-r-2 border-b-2"
+                    className="btn btn-neutral tooltip tooltip-bottom min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800 ml-2 border-info border border-r-2 border-b-2"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
@@ -72,7 +72,7 @@ function NavMenu() {
             ))}
             {/* Theme Toggle Button */}
             <motion.button
-                    className="btn btn-neutral min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800 ml-2 border-info border-r-2 border-b-2"
+                    className="btn btn-neutral min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800 ml-2 border-info border border-r-2 border-b-2"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
