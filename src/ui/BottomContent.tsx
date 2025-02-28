@@ -11,7 +11,7 @@ export function BottomContent() {
 
     return (
         <div className="flex flex-col justify-end items-center pb-4 h-full w-full">
-            <div className="bg-info rounded-3xl mt-6 pt-1">
+            <div className="rounded-3xl mt-6 pt-1">
                 <DateDisplay />
                 <div className="flex flex-col">
                     <div className="flex flex-col w-full self-center">

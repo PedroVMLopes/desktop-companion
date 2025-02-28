@@ -1,3 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .custom-border {
+    @apply border-4 border-r-8 border-b-8 border-info shadow-md;
+  }
+}
+
 #root {
   width: 100vh;
   height: 100vh;
@@ -14,9 +24,9 @@
 }
 
 .backgroundLight {
-  background-image: url('../ui/assets/Grey-Beige.svg');
+  background-image: url('../ui/assets/bg-light.svg');
 }
 
 .backgroundDark {
-  background-image: url('../ui/assets/Green-Green.svg');
+  background-image: url('../ui/assets/bg-dark.svg');
 }

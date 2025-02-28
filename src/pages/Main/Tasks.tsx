@@ -18,19 +18,21 @@ export function Tasks() {
 
     return (
         <>
-            <div className="TasksMain bg-base-100 rounded-box mt-2 p-1 pb-2">
+            <div className="TasksMain bg-base-100 rounded-box mt-2 p-1 pb-2 custom-border">
                 <div className="flex flex-row justify-between items-center mt-1 px-2">
                     <h1 className="flex font-Shrikhand text-xl">Tarefas: </h1>
                     <button onClick={() => setMenuAddTaskExpanded(!isMenuAddTaskExpanded)} className="btn btn-sm btn-outline btn-secondary font-bold">Add {isMenuAddTaskExpanded ? "-" : <IoMdAdd />}</button>
                 </div>
                 
                 <AnimatePresence>
-                 {isMenuAddTaskExpanded && <AddTaskMenu handleMenuAddTask={handleMenuAddTask}/>}
-                 </AnimatePresence>
+                    {isMenuAddTaskExpanded && <AddTaskMenu handleMenuAddTask={handleMenuAddTask}/>}
+                </AnimatePresence>
+
+                <div>
+                    <AnimatePresence> <TaskCard /> </AnimatePresence>
+                </div>
             </div>
-            <div>
-                <AnimatePresence> <TaskCard /> </AnimatePresence>
-            </div>
+            
         </>
         
     )

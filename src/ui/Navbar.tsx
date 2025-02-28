@@ -16,26 +16,33 @@ export const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className='NavbarRender bg-base-300 m-1 mx-2 rounded-xl'>
-            <nav className="flex flex-row items-center w-full max-w-[420px] p-1">
-                <ul className="navbar-nav">
-                    <label
-                        className="btn btn-primary bg-opacity-85 swap swap-rotate text-accent text-lg font-Paprika min-h-0 h-min px-[6px] py-[3px] rounded-xl shadow-sm shadow-stone-800 items-center"
-                    >
-                        {/*<IoMenu />*/}
-                        <input type="checkbox" onClick={() => setOpen(!open)}/>
-                        <p className="swap-off fill-current">PV</p>
-                        <p className="swap-on fill-current text-2xl"><IoClose /></p>
-                    </label>
-                </ul>
+        <AnimatePresence>
+            <motion.div 
+                className={`NavbarRender bg-base-100 m-1 mx-2 px-0.5 rounded-box custom-border ${!open ? "w-min" : ""}`}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.6 }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
+            >
+                <nav className="flex flex-row items-center w-full p-1">
+                    <ul className="navbar-nav">
+                        <label
+                            className="btn bg-opacity-0 border-0 swap swap-rotate text-accent text-lg font-Paprika min-h-0 h-min px-[6px] py-[3px] rounded-xl items-center"
+                        >
+                            {/*<IoMenu />*/}
+                            <input type="checkbox" onClick={() => setOpen(!open)}/>
+                            <p className="swap-off fill-current">PV</p>
+                            <p className="swap-on fill-current text-2xl"><IoClose /></p>
+                        </label>
+                    </ul>
 
-                {/* Menu animation & NavMenu */}
-                <AnimatePresence>
-                    {open && <NavMenu />}
-                </AnimatePresence>
-            </nav>
-        </div>
-        
+                    {/* Menu animation & NavMenu */}
+                    <AnimatePresence>
+                        {open && <NavMenu />}
+                    </AnimatePresence>
+                </nav>
+            </motion.div>
+        </AnimatePresence>
     );
 };
 
@@ -51,7 +58,7 @@ function NavMenu() {
             {menuItems.map(({ Icon, dataTip, link }, index) => (
                 <motion.li
                     key={index}
-                    className="btn btn-neutral tooltip tooltip-bottom min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800 ml-2"
+                    className="btn btn-neutral tooltip tooltip-bottom min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800 ml-2 border-info border-r-2 border-b-2"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
@@ -65,7 +72,7 @@ function NavMenu() {
             ))}
             {/* Theme Toggle Button */}
             <motion.button
-                    className="btn btn-neutral min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800 ml-2"
+                    className="btn btn-neutral min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800 ml-2 border-info border-r-2 border-b-2"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}

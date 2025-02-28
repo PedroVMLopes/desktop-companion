@@ -25,7 +25,7 @@ export default {
           accent: "#C14600",
           neutral: "#F4EAE0",
           "base-100": "#FEF9E1",
-          info: "#DCD7C9",
+          info: "#33372C",
           error: "#8c0327",
         },
         customDark: {
@@ -34,7 +34,7 @@ export default {
           accent: "#C14600",
           neutral: "#445D48",
           "base-100": "#3F4F44",
-          info: "#3f4f44",
+          info: "#33372C",
           error: "#8c0327",
         },
       },
