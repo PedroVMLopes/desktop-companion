@@ -25,7 +25,7 @@ export const OfficeHoursProvider = ({ children }: { children: React.ReactNode })
                 }
                 return prev + 1;
             });
-        }, 300000);
+        }, 10000);
     };
 
     const stopTimer = () => {

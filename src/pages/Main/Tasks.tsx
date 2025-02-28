@@ -18,16 +18,18 @@ export function Tasks() {
     return (
         <div className="TasksMain">
             <motion.div 
-                className="flex flex-col items-center mt-1 px-2 custom-border rounded-box p-1 bg-base-100"
+                className="flex flex-col items-center mt-1 px-2 custom-border rounded-box p-1 bg-base-100 w-full"
+                initial={{ height: "60px" }}
+                animate={{ height: isMenuAddTaskExpanded ? "140px" : "60px" }}
+                exit={{ scale: 0.6 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 >
                 <div className="flex flex-row justify-between items-center w-full py-1 px-2">
-                    <h1 className="flex font-Shrikhand text-xl">Tarefas: </h1>
+                    <h1 className="flex font-Shrikhand text-xl">Tarefas </h1>
                     <button onClick={() => setMenuAddTaskExpanded(!isMenuAddTaskExpanded)} className="btn btn-sm btn-ghost btn-secondary font-bold">Add {isMenuAddTaskExpanded ? <FaMinus /> : <FaPlus />}</button>
                 </div>    
-                {isMenuAddTaskExpanded && <AddTaskMenu handleMenuAddTask={handleMenuAddTask}/>}
-            </motion.div>
-                
-            
+                <AnimatePresence> {isMenuAddTaskExpanded && <AddTaskMenu handleMenuAddTask={handleMenuAddTask}/>} </AnimatePresence>
+            </motion.div>   
 
             <div>
                 <AnimatePresence> <TaskCard /> </AnimatePresence>
@@ -38,14 +40,18 @@ export function Tasks() {
 
 function AddTaskMenu({ handleMenuAddTask }: { handleMenuAddTask: () => void }) {
     return (
-        <div 
-            className="addTask bg-base-100 rounded-box m-1 mt-2 p-2 pt-2"
-        >
+        <motion.div 
+            className="addTask bg-base-100 rounded-box m-1 p-2 pt-2"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.6 }}
+                transition={{ duration: 0.1, ease: "easeInOut" }}
+            >
             <label className="input input-bordered flex items-center gap-2">
                 <input type="text" className="grow" placeholder="" />
                 <button onClick={handleMenuAddTask} className="btn btn-sm btn-accent">Adicionar</button>
             </label>
-        </div>
+        </motion.div>
     );
 }
 
