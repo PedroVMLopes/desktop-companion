@@ -1,3 +1,10 @@
 ----------------------------------------------------------------
 -- OfficeHoursContext
 -> Create alerts on the "Iniciar Jornada" and "Finalizar Jornada" button click;
+
+-- Tasks
+-> Create a tag input to add on the task
+    Ex: (Trabalho)
+        (Estudo) (TypeScript)
+        (Pesquisa) (China) (Filosofia)
+
