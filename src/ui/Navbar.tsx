@@ -58,7 +58,7 @@ function NavMenu() {
             {menuItems.map(({ Icon, dataTip, link }, index) => (
                 <motion.li
                     key={index}
-                    className="btn btn-neutral tooltip tooltip-bottom min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800 ml-2 border-info border border-r-2 border-b-2"
+                    className="btn btn-neutral tooltip tooltip-bottom min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-2xs shadow-stone-800 ml-2 border-info border border-r-2 border-b-2"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
@@ -72,7 +72,7 @@ function NavMenu() {
             ))}
             {/* Theme Toggle Button */}
             <motion.button
-                    className="btn btn-neutral min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-sm shadow-stone-800 ml-2 border-info border border-r-2 border-b-2"
+                    className="btn btn-neutral min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg shadow-2xs shadow-stone-800 ml-2 border-info border border-r-2 border-b-2"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
