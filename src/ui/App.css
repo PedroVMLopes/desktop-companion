@@ -2,6 +2,41 @@
 @plugin "daisyui";
 
 @plugin "daisyui/theme" {
+  name: "customTheme";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(95% 0.038 75.164);
+  --color-base-200: oklch(90% 0.076 70.697);
+  --color-base-300: oklch(83% 0.128 66.29);
+  --color-base-content: oklch(27% 0.072 132.109);
+  --color-primary: oklch(55% 0.195 38.402);
+  --color-primary-content: oklch(90% 0.076 70.697);
+  --color-secondary: oklch(21% 0.006 56.043);
+  --color-secondary-content: oklch(90% 0.076 70.697);
+  --color-accent: oklch(66% 0.179 58.318);
+  --color-accent-content: oklch(21% 0.006 56.043);
+  --color-neutral: oklch(27% 0.072 132.109);
+  --color-neutral-content: oklch(95% 0.038 75.164);
+  --color-info: oklch(52% 0.105 223.128);
+  --color-info-content: oklch(95% 0.045 203.388);
+  --color-success: oklch(44% 0.119 151.328);
+  --color-success-content: oklch(96% 0.067 122.328);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(26% 0.007 34.298);
+  --color-error: oklch(44% 0.177 26.899);
+  --color-error-content: oklch(93% 0.032 17.717);
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.28125rem;
+  --size-field: 0.25rem;
+  --border: 2px;
+  --depth: 1;
+  --noise: 1;
+};
+
+@plugin "daisyui/theme" {
   name: "customDark";
   default: false;
   prefersdark: false;
@@ -10,13 +45,13 @@
   --color-base-200: oklch(21% 0.006 56.043);
   --color-base-300: oklch(14% 0.004 49.25);
   --color-base-content: oklch(90% 0.076 70.697);
-  --color-primary: oklch(47% 0.157 37.304);
+  --color-primary: oklch(55% 0.195 38.402);
   --color-primary-content: oklch(90% 0.076 70.697);
-  --color-secondary: oklch(90% 0.076 70.697);
-  --color-secondary-content: oklch(26% 0.007 34.298);
+  --color-secondary: oklch(14% 0.004 49.25);
+  --color-secondary-content: oklch(90% 0.076 70.697);
   --color-accent: oklch(66% 0.179 58.318);
   --color-accent-content: oklch(26% 0.007 34.298);
-  --color-neutral: oklch(25% 0.092 26.042);
+  --color-neutral: oklch(40% 0.123 38.172);
   --color-neutral-content: oklch(90% 0.076 70.697);
   --color-info: oklch(39% 0.07 227.392);
   --color-info-content: oklch(95% 0.045 203.388);
@@ -35,44 +70,6 @@
   --depth: 1;
   --noise: 0;
 };
-
-
-@plugin "daisyui/theme" {
-  name: "customTheme";
-  default: true;
-  prefersdark: false;
-  color-scheme: "light";
-  --color-base-100: oklch(95% 0.038 75.164);
-  --color-base-200: oklch(90% 0.076 70.697);
-  --color-base-300: oklch(83% 0.128 66.29);
-  --color-base-content: oklch(27% 0.072 132.109);
-  --color-primary: oklch(47% 0.157 37.304);
-  --color-primary-content: oklch(90% 0.076 70.697);
-  --color-secondary: oklch(21% 0.006 56.043);
-  --color-secondary-content: oklch(90% 0.076 70.697);
-  --color-accent: oklch(39% 0.141 25.723);
-  --color-accent-content: oklch(93% 0.032 17.717);
-  --color-neutral: oklch(26% 0.065 152.934);
-  --color-neutral-content: oklch(95% 0.038 75.164);
-  --color-info: oklch(52% 0.105 223.128);
-  --color-info-content: oklch(95% 0.045 203.388);
-  --color-success: oklch(44% 0.119 151.328);
-  --color-success-content: oklch(96% 0.067 122.328);
-  --color-warning: oklch(66% 0.179 58.318);
-  --color-warning-content: oklch(26% 0.007 34.298);
-  --color-error: oklch(44% 0.177 26.899);
-  --color-error-content: oklch(93% 0.032 17.717);
-  --radius-selector: 1rem;
-  --radius-field: 0.5rem;
-  --radius-box: 1rem;
-  --size-selector: 0.28125rem;
-  --size-field: 0.25rem;
-  --border: 2px;
-  --depth: 1;
-  --noise: 1;
-};
-
-
 
 @theme {
   --font-quicksand: Quicksand, sans-serif;
@@ -104,15 +101,15 @@
 }
 
 @utility custom-border {
-  @apply border-4 border-l-8 border-b-8 border-secondary shadow-md;
+  @apply border-2 border-l-6 border-b-6 border-secondary shadow-md rounded-box;
 }
 
-@utility custom-frame {
-  @apply border-2 border-t-4 border-secondary-content p-4 shadow-md rounded-lg;
+@utility custom-window {
+  @apply border-2 border-l-6 border-b-6 border-secondary rounded-b-box shadow-md;
 }
 
-@utility custom-frame-top {
-  @apply bg-secondary
+@utility custom-window-top {
+  @apply bg-secondary text-secondary-content text-center p-1 rounded-t-box font-lobster-title;
 }
 
 #root {
@@ -131,7 +128,7 @@
 }
 
 .backgroundLight {
-  background-image: url('../ui/assets/LightMode.jpg');
+  background-image: url('../ui/assets/bg-light.svg');
 }
 
 .backgroundDark {

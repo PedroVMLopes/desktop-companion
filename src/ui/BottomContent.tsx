@@ -10,17 +10,15 @@ export function BottomContent() {
     const { hours, minutes, seconds } = useCurrentTime();
 
     return (
-        <div className="flex flex-col justify-end items-baseline pl-4 pb-6 h-full w-full">
-            <div className="mt-6 pt-1 backdrop-blur-xs custom-frame">
+        <div className="flex flex-col justify-end items-baseline pl-4 pb-6 h-full w-min">
+            <div className="pt-0 bg-base-100 custom-window rounded-box p-0">
                 <DateDisplay />
-                <div className="flex flex-col">
-                    <div className="flex flex-col w-full self-center">
-                        <OfficeHoursProgressBar />
-                        <Clock hours={hours} minutes={minutes} seconds={seconds} />
-                        <HourProgressBar minutes={minutes} />
-                        <MinuteProgressBar seconds={seconds} />
-                    </div>
-                </div>
+                <Clock hours={hours} minutes={minutes} seconds={seconds} />
+            </div>
+            <div className="progressBars flex flex-col bg-base-100 custom-window rounded-xl rounded-b-xl w-full mt-1 p-1">
+                <OfficeHoursProgressBar />
+                <HourProgressBar minutes={minutes} />
+                <MinuteProgressBar seconds={seconds} />
             </div>
         </div>
     );

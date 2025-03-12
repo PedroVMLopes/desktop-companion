@@ -18,16 +18,16 @@ export const Navbar = () => {
     return (
         <AnimatePresence>
             <motion.div 
-                className={`NavbarRender my-1 px-0.5 py-0.5 rounded-box custom-border bg-orange-100 border-stone-800 ${!open ? "w-min" : ""}`}
+                className={`NavbarRender my-1 custom-border bg-base-100 ${!open ? "w-min" : ""}`}
                 initial={{ scale: 0 }}
                 animate={{ scale: 1, width: open ? "100%" : "60px" }}
                 exit={{ scale: 0.6 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-                <nav className="flex flex-row items-center w-full p-1">
+                <nav className="flex flex-row items-center p-1">
                     <ul className="navbar-nav">
                         <label
-                            className="btn btn-ghost bg-opacity-0 border-0 swap swap-rotate text-primary text-lg font-Paprika min-h-0 h-min px-[6px] py-[3px] rounded-xl items-center"
+                            className="btn btn-ghost bg-opacity-0 border-0 swap swap-rotate text-primary text-lg font-Paprika rounded-xl items-center px-2.5"
                         >
                             {/*<IoMenu />*/}
                             <input type="checkbox" onClick={() => setOpen(!open)}/>
@@ -58,7 +58,7 @@ function NavMenu() {
             {menuItems.map(({ Icon, dataTip, link }, index) => (
                 <motion.li
                     key={index}
-                    className="btn btn-ghost tooltip tooltip-bottom text-stone-800  min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg ml-2"
+                    className="btn btn-ghost tooltip tooltip-bottom min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg ml-2"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
