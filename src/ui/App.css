@@ -101,11 +101,7 @@
 }
 
 @utility custom-border {
-  @apply border-2 border-l-6 border-b-6 border-secondary shadow-md rounded-box;
-}
-
-@utility custom-window {
-  @apply border-2 border-l-6 border-b-6 border-secondary rounded-b-box shadow-md;
+  @apply border-r-4 border-t-4 border-b-8 border-l-8 border-secondary rounded-b-box shadow-md;
 }
 
 @utility custom-window-top {

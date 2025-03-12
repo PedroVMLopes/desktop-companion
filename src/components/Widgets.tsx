@@ -15,7 +15,7 @@ export function SalaryInDollar() {
     return (
         <div className="flex flex-col">
             <div className="custom-window-top">/ Inspo / Salário</div>
-            <div className='SalaryInDollar flex flex-row px-2 custom-window bg-base-100'>
+            <div className='SalaryInDollar flex flex-row px-2 custom-border bg-base-100'>
                 <div className="card rounded-box p-2 px-3 flex-row font-Poppins items-center">
                     <h1 className="stat-title">U$D:</h1><h2 className="ml-1 font-bold">{dollar?.toFixed(3)}</h2>
                 </div>
