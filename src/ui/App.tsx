@@ -41,7 +41,7 @@ function App() {
     <div className='w-screen h-screen'>
       <div className={theme === "customTheme" ? "spacer backgroundLight" : "spacer backgroundDark"}>
         <OfficeHoursProvider>
-          <div className='absolute w-full mt-1'>
+          <div className='absolute w-full mt-1 px-4'>
             <Router>
               <Navbar />
               <main className='MainContent flex flex-col m-2 mt-2 rounded-xl'>

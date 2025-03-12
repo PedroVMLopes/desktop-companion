@@ -3,7 +3,7 @@ interface HourProgressBarProps {
 }
 
 const HourProgressBar: React.FC<HourProgressBarProps> = ({ minutes }) => {
-    return <progress className="progress progress-accent self-center shadow-md" value={minutes} max="60"></progress>;
+    return <progress className="progress progress-primary self-center shadow-md" value={minutes} max="60"></progress>;
 };
 
 export default HourProgressBar;

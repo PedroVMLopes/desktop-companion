@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @plugin "daisyui";
 
+
 @plugin "daisyui/theme" {
   name: "customDark";
   default: false;
@@ -12,10 +13,10 @@
   --color-base-content: oklch(90% 0.076 70.697);
   --color-primary: oklch(47% 0.157 37.304);
   --color-primary-content: oklch(90% 0.076 70.697);
-  --color-secondary: oklch(44% 0.011 73.639);
-  --color-secondary-content: oklch(90% 0.076 70.697);
-  --color-accent: oklch(86% 0.005 56.366);
-  --color-accent-content: oklch(21% 0.006 56.043);
+  --color-secondary: oklch(90% 0.076 70.697);
+  --color-secondary-content: oklch(39% 0.141 25.723);
+  --color-accent: oklch(40% 0.101 131.063);
+  --color-accent-content: oklch(90% 0.076 70.697);
   --color-neutral: oklch(25% 0.092 26.042);
   --color-neutral-content: oklch(90% 0.076 70.697);
   --color-info: oklch(39% 0.07 227.392);
@@ -35,6 +36,8 @@
   --depth: 1;
   --noise: 0;
 };
+
+
 
 
 @theme {
@@ -90,5 +93,6 @@
 }
 
 .backgroundDark {
+  background-image: url('../ui/assets/DarkMode.png');
   background-color: oklch(21% 0.006 56.043);
 }
