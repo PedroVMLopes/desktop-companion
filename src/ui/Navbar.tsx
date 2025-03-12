@@ -18,7 +18,7 @@ export const Navbar = () => {
     return (
         <AnimatePresence>
             <motion.div 
-                className={`NavbarRender bg-base-100 my-1 px-0.5 py-0.5 rounded-box custom-border ${!open ? "w-min" : ""}`}
+                className={`NavbarRender my-1 px-0.5 py-0.5 rounded-box custom-border bg-orange-100 border-stone-800 ${!open ? "w-min" : ""}`}
                 initial={{ scale: 0 }}
                 animate={{ scale: 1, width: open ? "100%" : "60px" }}
                 exit={{ scale: 0.6 }}
@@ -58,7 +58,7 @@ function NavMenu() {
             {menuItems.map(({ Icon, dataTip, link }, index) => (
                 <motion.li
                     key={index}
-                    className="btn btn-ghost tooltip tooltip-bottom tooltip-secondary min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg ml-2"
+                    className="btn btn-ghost tooltip tooltip-bottom text-stone-800  min-h-0 h-min min-w-0 p-[6px] text-xl rounded-lg ml-2"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
@@ -87,7 +87,7 @@ function NavMenu() {
 const menuItems = [
     { Icon: IoHome, link: "/", dataTip: "Home"},
     { Icon: FaBusinessTime, dataTip: "Jornada", link: "OfficeHours"},
-    { Icon: FaTasks, dataTip: "Tarefas Completadas", link: "CompletedTasks"},
+    { Icon: FaTasks, dataTip: "Lista de Tarefas", link: "CompletedTasks"},
     { Icon: BsClipboardDataFill, dataTip: "Estatísticas", link: "/"},
     { Icon: LuNotebookPen, dataTip: "Adicionar Nota", link: "/"},
     { Icon: IoLibrary, dataTip: "Biblioteca", link: "/"}

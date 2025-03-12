@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 @plugin "daisyui";
 
-
 @plugin "daisyui/theme" {
   name: "customDark";
   default: false;
@@ -14,9 +13,9 @@
   --color-primary: oklch(47% 0.157 37.304);
   --color-primary-content: oklch(90% 0.076 70.697);
   --color-secondary: oklch(90% 0.076 70.697);
-  --color-secondary-content: oklch(39% 0.141 25.723);
-  --color-accent: oklch(40% 0.101 131.063);
-  --color-accent-content: oklch(90% 0.076 70.697);
+  --color-secondary-content: oklch(26% 0.007 34.298);
+  --color-accent: oklch(66% 0.179 58.318);
+  --color-accent-content: oklch(26% 0.007 34.298);
   --color-neutral: oklch(25% 0.092 26.042);
   --color-neutral-content: oklch(90% 0.076 70.697);
   --color-info: oklch(39% 0.07 227.392);
@@ -24,7 +23,7 @@
   --color-success: oklch(45% 0.124 130.933);
   --color-success-content: oklch(90% 0.076 70.697);
   --color-warning: oklch(84.8% 0.1962 84.62);
-  --color-warning-content: oklch(44.8% 0.1962 84.62);
+  --color-warning-content: oklch(37% 0.01 67.558);
   --color-error: oklch(65% 0.1985 24.22);
   --color-error-content: oklch(27% 0.1985 24.22);
   --radius-selector: 1rem;
@@ -32,11 +31,46 @@
   --radius-box: 1rem;
   --size-selector: 0.28125rem;
   --size-field: 0.25rem;
-  --border: 1px;
+  --border: 2px;
   --depth: 1;
   --noise: 0;
 };
 
+
+@plugin "daisyui/theme" {
+  name: "customTheme";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(95% 0.038 75.164);
+  --color-base-200: oklch(90% 0.076 70.697);
+  --color-base-300: oklch(83% 0.128 66.29);
+  --color-base-content: oklch(27% 0.072 132.109);
+  --color-primary: oklch(47% 0.157 37.304);
+  --color-primary-content: oklch(90% 0.076 70.697);
+  --color-secondary: oklch(21% 0.006 56.043);
+  --color-secondary-content: oklch(90% 0.076 70.697);
+  --color-accent: oklch(39% 0.141 25.723);
+  --color-accent-content: oklch(93% 0.032 17.717);
+  --color-neutral: oklch(26% 0.065 152.934);
+  --color-neutral-content: oklch(95% 0.038 75.164);
+  --color-info: oklch(52% 0.105 223.128);
+  --color-info-content: oklch(95% 0.045 203.388);
+  --color-success: oklch(44% 0.119 151.328);
+  --color-success-content: oklch(96% 0.067 122.328);
+  --color-warning: oklch(66% 0.179 58.318);
+  --color-warning-content: oklch(26% 0.007 34.298);
+  --color-error: oklch(44% 0.177 26.899);
+  --color-error-content: oklch(93% 0.032 17.717);
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.28125rem;
+  --size-field: 0.25rem;
+  --border: 2px;
+  --depth: 1;
+  --noise: 1;
+};
 
 
 
@@ -49,7 +83,7 @@
   --font-Shrikhand: Shrikhand, sans-serif;
   --font-Paprika: Paprika, sans-serif;
   --font-Poppins: Poppins, sans-serif;
-}
+};
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -70,7 +104,15 @@
 }
 
 @utility custom-border {
-  @apply border-4 border-l-8 border-b-8 border-base-300 shadow-md;
+  @apply border-4 border-l-8 border-b-8 border-secondary shadow-md;
+}
+
+@utility custom-frame {
+  @apply border-2 border-t-4 border-secondary-content p-4 shadow-md rounded-lg;
+}
+
+@utility custom-frame-top {
+  @apply bg-secondary
 }
 
 #root {
@@ -89,7 +131,7 @@
 }
 
 .backgroundLight {
-  background-image: url('../ui/assets/bg-light.svg');
+  background-image: url('../ui/assets/LightMode.jpg');
 }
 
 .backgroundDark {
