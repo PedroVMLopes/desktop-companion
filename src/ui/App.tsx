@@ -41,11 +41,11 @@ function App() {
     <div className='w-screen h-screen'>
       <div className={theme === "customTheme" ? "spacer backgroundLight" : "spacer backgroundDark"}>
         <OfficeHoursProvider>
-          <div className='absolute w-full mt-1 px-4'>
+          <div className='absolute w-full h-full mt-1 pb-6 px-4'>
             <Router>
-              <Navbar />
-              <main className='MainContent flex flex-col mt-2 ml-88 rounded-xl'>
+              <main className='MainContent flex flex-col mt-2 ml-84 rounded-xl justify-between h-full'>
                 <AnimatedRoutes />
+                <Navbar />
               </main>
             </Router>
           </div>
