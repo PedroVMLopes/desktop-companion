@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@config "../../tailwind.config.js";
+
 @layer components {
   .custom-border {
     @apply border-4 border-l-8 border-b-8 border-info shadow-md;
