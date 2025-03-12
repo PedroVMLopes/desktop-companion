@@ -128,6 +128,6 @@
 }
 
 .backgroundDark {
-  background-image: url('../ui/assets/DarkMode.png');
+  background-image: url('../ui/assets/bg-dark.svg');
   background-color: oklch(21% 0.006 56.043);
 }

@@ -1,8 +1,7 @@
 //import { IoMenu } from "react-icons/io5";
 import { FaTasks } from "react-icons/fa";
 import { FaBusinessTime } from "react-icons/fa";
-import { LuNotebookPen } from "react-icons/lu";
-import { IoHome, IoLibrary, IoClose } from "react-icons/io5";
+import { IoHome, IoClose } from "react-icons/io5";
 import { BsClipboardDataFill } from "react-icons/bs";
 
 import { useState } from "react";

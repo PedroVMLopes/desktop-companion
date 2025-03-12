@@ -11,11 +11,16 @@ export function BottomContent() {
 
     return (
         <div className="flex flex-col justify-end items-baseline pl-4 pb-4 h-full w-min">
+            <div className="calendar bg-base-100 custom-border rounded-box p-0 mb-2">
+            <div className="calendar bg-base-100 custom-border rounded-box p-0 mb-2">
+                
+            </div>
+            </div>
             <div className="pt-0 bg-base-100 custom-border rounded-box p-0">
                 <DateDisplay />
                 <Clock hours={hours} minutes={minutes} seconds={seconds} />
             </div>
-            <div className="progressBars flex flex-col bg-base-100 custom-border rounded-xl rounded-b-xl w-full mt-1 p-2">
+            <div className="progressBars flex flex-col bg-base-100 custom-border rounded-xl rounded-b-xl w-full mt-2 p-2">
                 <OfficeHoursProgressBar />
                 <HourProgressBar minutes={minutes} />
                 <MinuteProgressBar seconds={seconds} />
@@ -23,5 +28,7 @@ export function BottomContent() {
         </div>
     );
 }
+
+
 
 export default BottomContent;
