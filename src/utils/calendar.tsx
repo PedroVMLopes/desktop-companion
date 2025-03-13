@@ -19,7 +19,7 @@ export function CalendarComponent() {
                 today: "border-primary",
                 selected: "bg-primary rounded-box",
                 chevron: "fill-neutral",
-                caption_label: "p-2.5",
+                caption_label: "p-2.5 font-lobster-text",
                 day_button: "w-[20px] h-[20px]"
             }}
         />

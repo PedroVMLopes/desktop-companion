@@ -101,7 +101,7 @@
 }
 
 @utility custom-border {
-  @apply border-r-4 border-t-4 border-b-8 border-l-8 border-secondary rounded-b-box shadow-md;
+  @apply border-l-4 border-t-4 border-b-8 border-r-8 border-secondary rounded-b-box shadow-md;
 }
 
 @utility custom-window-top {

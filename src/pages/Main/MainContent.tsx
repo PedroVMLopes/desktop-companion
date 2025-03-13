@@ -13,7 +13,7 @@ export function MainContent() {
                 <Gallery />
             </div>
 
-            <div className="mainContentLeft flex flex-col gap-4">
+            <div className="mainContentLeft flex flex-col gap-2">
                 <SalaryInDollar />
                 <CurrentTask />
             </div>
