@@ -6,15 +6,15 @@ interface ClockProps {
 
 const Clock: React.FC<ClockProps> = ({ hours, minutes }) => {
     return (
-        <div className="flex flex-col items-center py-4 text-6xl">
+        <div className="flex flex-col items-center py-4 text-6xl h-full justify-center">
             <div className="grid grid-flow-col gap-2 text-center auto-cols-max font-quicksand">
-                <div className="flex flex-col p-2 rounded-box shadow-xl bg-primary text-primary-content">
+                <div className="flex flex-col px-4 rounded-box">
                     <span className="countdown justify-center p-2">
                         <span style={{ "--value": hours } as React.CSSProperties}></span>
                     </span>
                 </div>
                 <p className="flex items-center text-3xl font-semibold">:</p>
-                <div className="flex flex-col p-2 rounded-box bg-base-100">
+                <div className="flex flex-col px-4 rounded-box">
                     <span className="countdown justify-center p-2">
                         <span style={{ "--value": minutes } as React.CSSProperties}></span>
                     </span>

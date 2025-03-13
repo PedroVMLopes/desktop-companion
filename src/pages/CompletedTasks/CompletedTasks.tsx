@@ -1,6 +1,9 @@
+import { Tasks } from "../../ui/Tasks";
+
 export function CompletedTasks() {
     return (
-        <div className="bg-base-100">
+        <div className="">
+            <Tasks />
             CompletedTasks
         </div>
     )

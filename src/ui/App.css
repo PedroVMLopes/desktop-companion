@@ -105,7 +105,7 @@
 }
 
 @utility custom-window-top {
-  @apply bg-secondary text-secondary-content text-center p-1 rounded-t-box font-lobster-title;
+  @apply bg-secondary text-secondary-content pl-6 py-1.5 rounded-t-box font-lobster-title;
 }
 
 #root {

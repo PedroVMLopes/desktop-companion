@@ -1,9 +1,9 @@
 import { useLocation, Routes, Route } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { SalaryInDollar } from '../components/Widgets';
 import { OfficeHours } from '../pages/OfficeHours/OfficeHours';
 import { CompletedTasks } from '../pages/CompletedTasks/CompletedTasks';
-import { Tasks } from '../pages/Main/Tasks';
+import { Tasks } from './Tasks';
+import { MainContent } from '../pages/Main/MainContent';
 
 
 function AnimatedRoutes() {
@@ -21,8 +21,7 @@ function AnimatedRoutes() {
               exit={{ opacity: 0, x: 20 }} 
               transition={{ duration: 0.3 }}
             >
-              <SalaryInDollar />
-              <Tasks />
+              <MainContent />
             </motion.div>
           }
         />

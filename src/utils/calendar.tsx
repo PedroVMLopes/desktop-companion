@@ -18,7 +18,8 @@ export function CalendarComponent() {
             classNames={{
                 today: "border-primary",
                 selected: "bg-primary rounded-box",
-                chevron: "fill-neutral"
+                chevron: "fill-neutral",
+                caption_label: "p-2.5"
             }}
         />
       </div>

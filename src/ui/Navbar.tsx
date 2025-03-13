@@ -15,7 +15,7 @@ export const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="flex flex-row w-full justify-between">
+        <div className="flex flex-row w-full justify-between ">
             <AnimatePresence>
                 <motion.div 
                     className={`NavbarRender my-1 custom-border rounded-t-box bg-base-100 ${!open ? "w-min" : ""}`}
