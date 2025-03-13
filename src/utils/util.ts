@@ -31,13 +31,9 @@ const getFormattedDate = (date: Date): string => {
     const formattedDate = new Intl.DateTimeFormat("pt-BR", {
       weekday: "long",
       day: "2-digit",
-      month: "long",
     }).format(date);
   
-    return formattedDate
-      .split(" ")
-      .map(word => (word === "de" ? word : capitalizeFirstLetter(word)))
-      .join(" ");
+    return capitalizeFirstLetter(formattedDate)
 };
   
 export const useCurrentDate = () => {
