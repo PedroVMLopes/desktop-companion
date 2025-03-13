@@ -43,9 +43,9 @@ function App() {
         <OfficeHoursProvider>
           <div className='w-full h-full pb-4 p-3 flex flex-row justify-between'>
             <Router>
-              <main className='MainContent flex flex-col rounded-xl justify-between h-full w-full'>
-                <AnimatedRoutes />
+              <main className='MainContent flex flex-col rounded-xl h-full w-full'>
                 <Navbar />
+                <AnimatedRoutes />
               </main>
             </Router>
             <BottomContent />

@@ -18,7 +18,7 @@ export const Navbar = () => {
         <div className="flex flex-row w-full justify-between ">
             <AnimatePresence>
                 <motion.div 
-                    className={`NavbarRender mt-1 custom-border rounded-t-box bg-base-100 ${!open ? "w-min" : ""}`}
+                    className={`NavbarRender mb-1 custom-border rounded-t-box bg-base-100 ${!open ? "w-min" : ""}`}
                     initial={{ scale: 0 }}
                     animate={{ scale: 1, width: open ? "100%" : "60px" }}
                     exit={{ scale: 0.6 }}
