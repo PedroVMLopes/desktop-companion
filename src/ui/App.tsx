@@ -41,9 +41,9 @@ function App() {
     <div className='w-screen h-screen'>
       <div className={theme === "customTheme" ? "spacer backgroundLight" : "spacer backgroundDark"}>
         <OfficeHoursProvider>
-          <div className='w-full h-full mt-1 pb-6 px-4 flex flex-row justify-between'>
+          <div className='w-full h-full pb-4 p-3 flex flex-row justify-between'>
             <Router>
-              <main className='MainContent flex flex-col mt-2 rounded-xl justify-between h-full w-full'>
+              <main className='MainContent flex flex-col rounded-xl justify-between h-full w-full'>
                 <AnimatedRoutes />
                 <Navbar />
               </main>
