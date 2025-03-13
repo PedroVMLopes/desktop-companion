@@ -5,7 +5,7 @@ import { Gallery } from "./Gallery";
 export function MainContent() {
     return (
         <div
-            className="mainContentTop grid grid-cols-[1fr_2fr] gap-4 w-full"
+            className="mainContentTop grid grid-cols-[1fr_2fr] gap-4 w-full mt-1"
             style={{ gridTemplateRows: "auto 1fr" }}
         >
 
