@@ -6,7 +6,7 @@ import DateDisplay from "../components//BottomContent/DateDisplay";
 export function CalendarComponent() {
     const [date, setDate] = useState<Date | undefined>();
     return (
-      <div className="p-0">
+      <div className="p-0 pb-1.5">
         <DateDisplay />
         <DayPicker
             animate
@@ -20,7 +20,8 @@ export function CalendarComponent() {
                 selected: "bg-primary rounded-box",
                 chevron: "fill-neutral",
                 caption_label: "p-2.5 font-lobster-text",
-                day_button: "w-[20px] h-[20px]"
+                day: "h-[36px] w-[42px]",
+                day_button: "flex justify-center items-center w-full h-full cursor-pointer"
             }}
         />
       </div>

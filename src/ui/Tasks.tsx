@@ -68,8 +68,8 @@ function SubTaskCard() {
                         <input type="checkbox" className="checkbox checkbox-xs rounded-md" />
                         <input type="text" placeholder="Nome da Sub-task" className="input input-sm bg-base-100 label-text pl-1 ml-2"></input>
                     </div>
+                    <input type="text" value={"0 h 15 min"} readOnly className="fieldset-label text-left text-sm ml-0.5 rounded-md w-min max-w-[110px]" />
                 </label>
-                <input type="text" value={"0 horas e 15 min"} readOnly className="fieldset-label text-left text-sm ml-0.5 rounded-md w-min max-w-[110px]" />
             </div>
             <button className="btn btn-ghost btn-accent btn-sm p-2 mr-4 opacity-60"> <FaPause /> </button>
         </div>
@@ -97,7 +97,7 @@ export function TaskCard() {
                     <input type="text" value={"0 horas e 42 min"} readOnly className="text-right font-semibold font-Poppins rounded-md w-min max-w-[125px]" />
                     <h1 className="ml-1 font-Poppins font-semibold text-nowrap ">na tarefa </h1>
                 </div>
-                <div className="divider m-0"></div>
+                <div className="divider m-0 px-4"></div>
                 <SubTaskCard />
                 <button className="btn btn-xs btn-outline opacity-60 my-2 mx-4">Sub-task <IoMdAdd /></button>
             </div>
