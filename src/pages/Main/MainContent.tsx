@@ -1,6 +1,6 @@
 import { SalaryInDollar } from "../../components/Widgets";
 import { CurrentTask } from "./CurrentTask";
-import { Gallery } from "./Gallery";
+import { Gallery } from "../../components/Gallery";
 
 export function MainContent() {
     return (

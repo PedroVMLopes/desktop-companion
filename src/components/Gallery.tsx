@@ -4,10 +4,11 @@ export function Gallery() {
         "https://i.pinimg.com/736x/ba/51/ef/ba51efc2ffe3810f6a8237aae37f42c3.jpg",
         "https://i.pinimg.com/736x/b4/1d/02/b41d029fcfbd64150b2ddb05fe464437.jpg",
         "https://i.pinimg.com/736x/bb/56/46/bb564648e79b93f7d0e33204ffe39654.jpg",
+        "https://i.imgur.com/LWAEoJw.jpeg"
     ];
 
     return (
-        <div className="w-fit">
+        <div className="w-fit custom-border rounded-t-3xl">
             <div className="custom-window-top flex flex-row px-4">
                 <div className="divider divider-horizontal divider-accent py-2 ml-1"></div>
                 <div className="card rounded-box py-1 flex flex-row items-center">
@@ -17,8 +18,8 @@ export function Gallery() {
 
             <div className=" w-full">
                 <img
-                    src={"https://i.pinimg.com/736x/ba/51/ef/ba51efc2ffe3810f6a8237aae37f42c3.jpg"}
-                    className="w-full max-h-[320px] max-w-[270px] rounded-b-box"
+                    src={"https://i.imgur.com/LWAEoJw.jpeg"}
+                    className="w-full max-h-[320px] max-w-[270px] rounded-b-xl"
                     alt="Burberry store front"
                 />
             </div>
