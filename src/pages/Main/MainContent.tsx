@@ -1,6 +1,7 @@
 import { SalaryInDollar } from "../../components/Widgets";
 import { CurrentTask } from "./CurrentTask";
 import { Gallery } from "../../components/Gallery";
+import MediaController from "../../components/MediaController";
 
 export function MainContent() {
     return (
@@ -11,6 +12,7 @@ export function MainContent() {
 
             <div className="mainContentRight w-fit justify-self-start">
                 <Gallery />
+                
             </div>
 
             <div className="mainContentLeft flex flex-col gap-2">

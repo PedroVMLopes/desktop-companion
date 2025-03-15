@@ -2,8 +2,8 @@
     "compilerOptions": {
         "strict": true,
         "target": "ESNext",
-        "module": "NodeNext",
-        "moduleResolution": "NodeNext",
+        "module": "CommonJS",
+        "moduleResolution": "Node",
         "rootDir": "../../src",
         "outDir": "../../dist-electron",
         "skipLibCheck": true,
@@ -13,6 +13,6 @@
         "sourceMap": true,
         "allowJs": true,
     },
-    "include": ["./**/*.ts", "./**/*.js"],
+    "include": ["./**/*.ts", "./**/*.js", "preload.ts"],
     "exclude": ["node_modules"]
 }

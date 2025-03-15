@@ -4,18 +4,18 @@ import { isDev } from "../utils/util.js";
 import BetterSqlite3 from 'better-sqlite3';
 
 import { SubTask, Task } from "../Types/types.js";
+import { MediaPlayer } from "../utils/MediaPlayer.cjs";
 
 let mainWindow: BrowserWindow;
 let db: BetterSqlite3.Database;
-
-console.log("🚀 Electron está iniciando...");
+let mediaPlayer: MediaPlayer;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 900,
+    width: 1100,
     height: 900,
     webPreferences: {
-      preload: path.join(app.getAppPath(), "dist-electron/utils/preload.js"),
+      preload: path.join(app.getAppPath(), "preload.js"),
       nodeIntegration: false,
       contextIsolation: true,
     },
@@ -30,6 +30,10 @@ function createWindow() {
 
 function setupDatabase() {
   try {
+
+    const preloadPath = path.resolve(__dirname, '../preload.js');
+    console.log('Preload path:', preloadPath);
+
     const userDataPath = app.getPath("userData");
     console.log("User data path:", userDataPath);
     
@@ -91,6 +95,17 @@ app.whenReady().then(() => {
   setupDatabase();
   createWindow();
 
+  mediaPlayer = new MediaPlayer();
+
+  setInterval(() => {
+    if (mainWindow) {
+      const mediaInfo = mediaPlayer.getMediaInfo();
+      mainWindow.webContents.send('media-info-update', mediaInfo);
+    }
+  }, 1000);
+
+  setupIpcHandlers();
+
   // Configuring IPC events to communicate with renderer
   ipcMain.handle("add-task", async (_event, task: Task) => {
     try {
@@ -121,6 +136,28 @@ app.whenReady().then(() => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
 });
+
+
+function setupIpcHandlers() {
+  ipcMain.on('request-media-info', (event) => {
+    if (mediaPlayer) {
+      event.reply('media-info-update', mediaPlayer.getMediaInfo());
+    }
+  });
+
+  ipcMain.on('media-play-pause', () => {
+    mediaPlayer.playPause();
+  });
+
+  ipcMain.on('media-next', () => {
+    mediaPlayer.next();
+  });
+
+  ipcMain.on('media-previous', () => {
+    mediaPlayer.previous();
+  })
+}
+
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
