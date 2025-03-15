@@ -4,7 +4,10 @@ export function Gallery() {
         "https://i.pinimg.com/736x/ba/51/ef/ba51efc2ffe3810f6a8237aae37f42c3.jpg",
         "https://i.pinimg.com/736x/b4/1d/02/b41d029fcfbd64150b2ddb05fe464437.jpg",
         "https://i.pinimg.com/736x/bb/56/46/bb564648e79b93f7d0e33204ffe39654.jpg",
-        "https://i.imgur.com/LWAEoJw.jpeg"
+        "https://i.imgur.com/LWAEoJw.jpeg",
+        "https://i.imgur.com/Vh29B2H.png",
+        "https://i.imgur.com/zkaB2Y5.png",
+        "https://i.imgur.com/45G0Z2x.png"
     ];
 
     return (
@@ -18,7 +21,7 @@ export function Gallery() {
 
             <div className=" w-full">
                 <img
-                    src={"https://i.imgur.com/LWAEoJw.jpeg"}
+                    src={"https://i.imgur.com/zkaB2Y5.png"}
                     className="w-full max-h-[320px] max-w-[270px] rounded-b-xl"
                     alt="Burberry store front"
                 />

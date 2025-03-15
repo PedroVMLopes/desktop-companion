@@ -62,13 +62,13 @@ function AddTaskMenu({ handleMenuAddTask }: { handleMenuAddTask: () => void }) {
 function SubTaskCard() {
     return (
         <div className="flex flex-row justify-between">
-            <div className="SubTask form-control px-4 mb-2">
-                <label className="label cursor-pointer w-full p-0">
+            <div className="SubTask form-control pl-4 mb-2 w-full">
+                <label className="label cursor-pointer w-full p-0 justify-between">
                     <div className="flex flex-row items-center">
                         <input type="checkbox" className="checkbox checkbox-xs rounded-md" />
                         <input type="text" placeholder="Nome da Sub-task" className="input input-sm bg-base-100 label-text pl-1 ml-2"></input>
                     </div>
-                    <input type="text" value={"0 h 15 min"} readOnly className="fieldset-label text-left text-sm ml-0.5 rounded-md w-min max-w-[110px]" />
+                    <input type="text" value={"0 h 15 min"} readOnly className="fieldset-label text-right text-sm mr-1.5 rounded-md w-min max-w-[80px]" />
                 </label>
             </div>
             <button className="btn btn-ghost btn-accent btn-sm p-2 mr-4 opacity-60"> <FaPause /> </button>
