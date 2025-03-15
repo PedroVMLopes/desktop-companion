@@ -19,7 +19,7 @@ export function Gallery() {
                 </div>
             </div>
 
-            <div className=" w-full">
+            <div className="w-full">
                 <img
                     src={"https://i.imgur.com/zkaB2Y5.png"}
                     className="w-full max-h-[320px] max-w-[270px] rounded-b-xl"
