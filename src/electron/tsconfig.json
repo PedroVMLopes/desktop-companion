@@ -13,6 +13,6 @@
         "sourceMap": true,
         "allowJs": true,
     },
-    "include": ["./**/*.ts", "./**/*.js", "preload.ts"],
+    "include": ["./**/*.ts", "./**/*.js"],
     "exclude": ["node_modules"]
 }

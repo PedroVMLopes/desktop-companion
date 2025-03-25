@@ -22,5 +22,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "preload.ts"]
+  "include": ["src", "preload.ts", "dist-electron/utils/types.js"]
 }
