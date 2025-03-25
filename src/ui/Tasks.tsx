@@ -99,9 +99,14 @@ export function TaskCard() {
                 </div>
                 <div className="divider m-0 px-4"></div>
                 <SubTaskCard />
-                <div className="flex items-center mx-4 gap-2">
-                    <button className="btn btn-accent px-1 text-center mask mask-star-2"></button>
-                    <button className="btn btn-xs btn-ghost my-2">Sub-task <IoMdAdd /></button>
+                <div className="flex items-center mx-4 gap-2 justify-between">
+                    <div>
+                        <button className="btn btn-accent px-1 text-center mask mask-star-2"></button>
+                        <button className="btn btn-xs btn-ghost rounded-full my-2 mx-1">Sub-task <IoMdAdd /></button>
+                    </div>
+                    <div className="tags">
+                        <button className="btn btn-xs btn-ghost rounded-full">Tag +</button>
+                    </div>
                 </div>
             </div>
         </motion.div>
