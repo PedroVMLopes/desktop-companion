@@ -11,7 +11,7 @@ export function Gallery() {
     ];
 
     return (
-        <div className="w-fit custom-border rounded-t-3xl">
+        <div className="w-fit custom-border border-6 border-b-10 rounded-t-3xl">
             <div className="custom-window-top flex flex-row px-4">
                 <div className="divider divider-horizontal divider-accent py-2 ml-1"></div>
                 <div className="card rounded-box py-1 flex flex-row items-center">

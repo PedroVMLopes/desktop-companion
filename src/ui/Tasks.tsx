@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Task, SubTask } from "../Types/types";
 
 import { IoMdAdd } from "react-icons/io";
-import { FaPause, FaPlay, FaMinus, FaPlus } from "react-icons/fa";
+import { FaPause, FaPlay, FaMinus, FaPlus, FaRegStar, FaStar } from "react-icons/fa";
 
 
 
@@ -31,7 +31,7 @@ export function Tasks() {
             </motion.div>   
 
             <AnimatePresence> 
-                <div className="grid grid-cols-2 grid-rows-2 gap-2">
+                <div className="grid grid-cols-2 grid-rows-2 gap-2 mt-1">
                     <TaskCard />
                     <TaskCard />
                     <TaskCard />
@@ -66,7 +66,7 @@ function SubTaskCard() {
                 <label className="label cursor-pointer w-full p-0 justify-between">
                     <div className="flex flex-row items-center">
                         <input type="checkbox" className="checkbox checkbox-xs rounded-md" />
-                        <input type="text" placeholder="Nome da Sub-task" className="input input-sm bg-base-100 label-text pl-1 ml-2"></input>
+                        <input type="text" placeholder="Nome da Sub-task" className="input input-sm input-ghost label-text pl-1 ml-2"></input>
                     </div>
                     <input type="text" value={"0 h 15 min"} readOnly className="fieldset-label text-right text-sm mr-1.5 rounded-md w-min max-w-[80px]" />
                 </label>
@@ -99,7 +99,10 @@ export function TaskCard() {
                 </div>
                 <div className="divider m-0 px-4"></div>
                 <SubTaskCard />
-                <button className="btn btn-xs btn-outline opacity-60 my-2 mx-4">Sub-task <IoMdAdd /></button>
+                <div className="flex items-center mx-4 gap-2">
+                    <button className="btn btn-accent px-1 text-center mask mask-star-2"></button>
+                    <button className="btn btn-xs btn-ghost my-2">Sub-task <IoMdAdd /></button>
+                </div>
             </div>
         </motion.div>
     )
