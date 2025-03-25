@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { FaPlay, FaPause, FaBackwardStep, FaForwardStep } from "react-icons/fa6";
 
 // Interface para comunicação com o processo principal do Electron
-const { ipcRenderer } = window.require('electron');
+const { ipcRenderer } = require('electron');
 
 interface MediaInfo {
   title: string;
@@ -46,19 +46,19 @@ const MediaController: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-800 text-white p-4 rounded-lg shadow-lg">
+    <div className="bg-base-100 p-4 rounded-lg shadow-lg">
       <div className="flex flex-col items-center">
         <div className="mb-4 text-center">
           <h3 className="font-bold text-lg truncate max-w-xs">{mediaInfo.title}</h3>
           {mediaInfo.artist && (
-            <p className="text-gray-400 text-sm">{mediaInfo.artist}</p>
+            <p className="text-sm">{mediaInfo.artist}</p>
           )}
         </div>
         
         <div className="flex items-center space-x-6">
           <button 
             onClick={handlePrevious}
-            className="text-gray-300 hover:text-white focus:outline-none transition"
+            className="hover:text-white focus:outline-none transition"
           >
             <FaBackwardStep size={24} />
           </button>
@@ -72,7 +72,7 @@ const MediaController: React.FC = () => {
           
           <button 
             onClick={handleNext}
-            className="text-gray-300 hover:text-white focus:outline-none transition"
+            className=" hover:text-white focus:outline-none transition"
           >
             <FaForwardStep size={24} />
           </button>

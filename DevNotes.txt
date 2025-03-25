@@ -8,6 +8,7 @@
         (Estudo) (TypeScript)
         (Pesquisa) (China) (Filosofia)
 
+-> Make the necessary improvements to the AddTask Menu
 
 ---------------------------------------------------------------
 Previous DaisyUI color scheme:
