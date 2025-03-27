@@ -10,7 +10,7 @@ let mediaPlayer: MediaPlayer;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1100,
+    width: isDev() ? 1600 : 1100,
     height: 900,
     webPreferences: {
       preload: path.join(app.getAppPath(), "preload.js"),
@@ -20,6 +20,7 @@ function createWindow() {
 
   if (isDev()) {
     mainWindow.loadURL("http://localhost:5123");
+    mainWindow.webContents.openDevTools();
   } else {
     mainWindow.loadFile(path.join(app.getAppPath(), "/dist-react/index.html"));
   }

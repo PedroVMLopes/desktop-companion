@@ -3,7 +3,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Task, SubTask } from "../Types/types";
 
 import { IoMdAdd } from "react-icons/io";
-import { FaPause, FaPlay, FaMinus, FaPlus, FaRegStar, FaStar } from "react-icons/fa";
+import { FaPause, FaPlay, FaMinus, FaPlus, FaRegStar, FaStar, FaTrash } from "react-icons/fa";
+import { RiStarOffFill } from "react-icons/ri";
 
 
 
@@ -71,7 +72,7 @@ function SubTaskCard() {
                     <input type="text" value={"0 h 15 min"} readOnly className="fieldset-label text-right text-sm mr-1.5 rounded-md w-min max-w-[80px]" />
                 </label>
             </div>
-            <button className="btn btn-ghost btn-accent btn-sm p-2 mr-4 opacity-60"> <FaPause /> </button>
+            <button className="btn btn-ghost btn-accent btn-sm p-2 mr-4 opacity-60"> <FaPlay /> </button>
         </div>
     )
 }
@@ -88,24 +89,26 @@ export function TaskCard() {
             <label className="label cursor-pointer rounded-box justify-between flex flex-row items-center px-4 p-2 text-accent">
                 <div className="flex flex-row mt-1">
                     <input type="checkbox" className="checkbox checkbox-sm rounded-lg checkbox-accent" />
-                    <h1 className="ml-2 font-Poppins font-bold">Nome da task</h1>
+                    <input type="text" placeholder="Nome da Task" className="ml-2 font-bold"></input>
                 </div>
-                <button className="btn btn-ghost btn-accent btn-sm p-2"> <FaPause /> </button>
+                <button className="btn btn-ghost btn-accent btn-sm p-2"> <FaPlay /> </button>
             </label>
             <div className="pt-0">
                 <div className="flex flex-row px-4 text-sm">
-                    <input type="text" value={"0 horas e 42 min"} readOnly className="text-right font-semibold font-Poppins rounded-md w-min max-w-[125px]" />
-                    <h1 className="ml-1 font-Poppins font-semibold text-nowrap ">na tarefa </h1>
+                    <input type="text" value={"0 horas e 0 min"} readOnly className="text-left font-semibold font-Poppins rounded-md w-min max-w-[125px]" />
                 </div>
-                <div className="divider m-0 px-4"></div>
-                <SubTaskCard />
+                <div className="divider m-0 mt-1 px-4"></div>
+                <div className="subtasks">
+                    <SubTaskCard />
+                </div>
                 <div className="flex items-center mx-4 gap-2 justify-between">
                     <div>
-                        <button className="btn btn-accent px-1 text-center mask mask-star-2"></button>
-                        <button className="btn btn-xs btn-ghost rounded-full my-2 mx-1">Sub-task <IoMdAdd /></button>
+                        <button className="btn btn-xs btn-ghost px-1 text-accent text-center"><RiStarOffFill /></button>
+                        <button className="btn btn-xs btn-ghost my-2 mx-1">Sub-task <IoMdAdd /></button>
                     </div>
                     <div className="tags">
-                        <button className="btn btn-xs btn-ghost rounded-full">Tag +</button>
+                        <button className="btn btn-xs btn-ghost mx-1">Tag +</button>
+                        <button className="btn btn-xs btn-ghost btn-error rounded-full"><FaTrash /></button>
                     </div>
                 </div>
             </div>
